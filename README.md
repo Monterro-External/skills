@@ -38,6 +38,9 @@ Then, once per product repo:
 | `/monterro:account-synthesis` | CSM notes and escalations, one section per account, weighted by ARR |
 | `/monterro:synthesis` | The cross-source pass: what two or more independent channels show |
 | `/monterro:signal-triage` | Triage and the reports' For triage lines into one typed, tiered embryo per problem |
+| `/monterro:advance-ticket` | Diagnose where a ticket stands and prepare the cheapest next action toward handover |
+| `/monterro:solution-tournament` | Rank alternative solutions by blind pairwise judging against the ticket's own outcome |
+| `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named |
 
 ## How these are built
 
