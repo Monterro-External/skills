@@ -1,0 +1,17 @@
+{
+  "name": "monterro-product-process",
+  "owner": {
+    "name": "Monterro"
+  },
+  "metadata": {
+    "description": "The product-side skills for the Monterro product development process, as used in the workshop."
+  },
+  "plugins": [
+    {
+      "name": "monterro",
+      "source": "./plugins/monterro",
+      "description": "Product-side workflow: from a queue of customer signals or a PM's own idea to a Product Ticket engineering can pick up. Synthesis per channel, a cross-source pass, signal triage, and the two authoring entrances.",
+      "version": "0.1.0"
+    }
+  ]
+}
