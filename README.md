@@ -40,7 +40,7 @@ Then, once per product repo:
 | `/monterro:signal-triage` | Triage and the reports' For triage lines into one typed, tiered embryo per problem |
 | `/monterro:advance-ticket` | Diagnose where a ticket stands and prepare the cheapest next action toward handover |
 | `/monterro:solution-tournament` | Rank alternative solutions by blind pairwise judging against the ticket's own outcome |
-| `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.8 |
+| `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.9 |
 
 ## How these are built
 
