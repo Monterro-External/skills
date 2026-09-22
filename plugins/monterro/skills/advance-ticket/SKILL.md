@@ -27,6 +27,8 @@ If the ticket does not follow the Product Ticket structure at all (no sections, 
 
 Walk `references/diagnosis-ladder.md` top to bottom and stop at the first stage whose exit condition fails. That stage is the diagnosis; everything below it is noise until it clears. Resist the urge to list every imperfection in the ticket: a PM handed twelve findings does none of them. One stage, one next action, everything else at most a one-line footnote.
 
+Footnotes run in both directions. A finding about a **later** stage belongs there too, when the run established it as fact and it changes how that stage will be done: where the data actually lives, a source the ticket does not cite, an existing mechanism that may end the discovery early. It stays a footnote. It never becomes a second next action, and it is never speculation about a stage the ticket has not reached, which is the bill of findings this rule exists to prevent. The test is whether the run verified it, not whether it is interesting.
+
 The ladder in brief (the reference file carries the full exit conditions):
 
 1. **Structure**: is it a conforming Product Ticket embryo?
@@ -69,7 +71,7 @@ Blocking: <the one gap, one line>
 Next action: <what, who, and the effort in honest units: minutes, hours, or a meeting>
 Prepared: <what this run drafted or found, as links or attachments>
 Door ahead: <the next human decision on the horizon and its owner>
-Footnotes: <at most two one-liners on lower-ladder issues, or "none">
+Footnotes: <at most two one-liners, or "none". Either direction: a lower-ladder issue too small to be the diagnosis, or a fact this run established about a later stage. A forward footnote names its stage and says what was found, never what should be decided there>
 ```
 
 The whole block fits on one screen. If it does not, the diagnosis is trying to be a review; cut it back to the one blocking gap.

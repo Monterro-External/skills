@@ -32,6 +32,7 @@ Then, once per product repo:
 | `/monterro:interview-synthesis` | A round's notes into the synthesis report: themes with two or more independent voices |
 | `/monterro:support-synthesis` | A period of the support queue into the synthesis report, counted by reading rather than by tag |
 | `/monterro:support-dig` | One hypothesis against the whole queue. Writes nothing |
+| `/monterro:ask-product` | One question about how the product works, answered from the product's own sources with a verdict, a confidence and a citation on every claim. Reads only, files nothing |
 | `/monterro:feature-request-ledger` | The request channel into the one living ledger. Never a ticket |
 | `/monterro:feedback-synthesis` | NPS, app reviews and member feedback, the operator's voice kept apart from the member's |
 | `/monterro:sales-synthesis` | Call transcripts and lost deals, market kept apart from book |
