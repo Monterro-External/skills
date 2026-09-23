@@ -75,6 +75,8 @@ Not read: <the configured source that was missing or unreachable, or omit>
 
 Compose the answer first, then append one record per invocation to `ask_log` in the schema of `references/log-schema.md`. Strip customer names and personal data from `question_raw` at write time; an account goes in as its tenant id.
 
+Two fields are read, never written from memory or copied from the schema's example. `ts` comes from the clock at write time, `date -u +%Y-%m-%dT%H:%M:%SZ`, so two records on one day can be ordered. `skill_version` is the `version` in `${CLAUDE_SKILL_DIR}/../../.claude-plugin/plugin.json`; if that file is not there, as in a source copy outside the plugin, write `unversioned` rather than guess.
+
 If the log cannot be written, still answer, say in one line that it was not logged, and write the record to `.claude/ask-log-fallback.jsonl` with `log_fallback: true` and `log_fallback_reason` carrying the failure in the words it gave. The `Logged:` line then names the fallback path and says the primary was not written, so the asker can see it from the answer. A logging layer that fails quietly kills the feedback loop and nobody notices for a quarter, and a fallback nobody replays is the same failure one file along: the weekly review drains it, per `references/log-schema.md`.
 
 Close in three lines:

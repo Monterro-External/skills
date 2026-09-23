@@ -5,8 +5,8 @@ One flat JSON object per invocation, appended as a line to `ask_log` (default `s
 | Field | Type | Why it is there |
 |---|---|---|
 | `id` | string | `ask-YYYYMMDD-nnn`, unique per record |
-| `ts` | ISO 8601 | When it was asked |
-| `skill_version` | string | Ties answer quality to a version of this skill |
+| `ts` | ISO 8601 | When it was asked, read from the clock at write time, to the second |
+| `skill_version` | string | Ties answer quality to a version of this skill. The plugin's `version` from `plugin.json`, or `unversioned` outside the plugin |
 | `config_version` | string | The `.claude/monterro.json` revision that produced it |
 | `asker` | string | Name or handle, internal only |
 | `asker_role` | enum | `support`, `sales`, `cs`, `engineering`, `product`, `other`. Sales and support asking the same thing are two different problems |
@@ -34,7 +34,7 @@ A refused record carries `question_raw`, `question_normalized`, `product_area`, 
 ## Example
 
 ```json
-{"id":"ask-20260922-001","ts":"2026-09-22T09:14:00Z","skill_version":"0.1.0","config_version":"2026-09-08","asker":"lotta","asker_role":"support","product_area":"payments","question_raw":"Customer says the member was charged twice after a failed payment. Expected?","question_normalized":"duplicate charge after failed payment retry","verdict":"likely-bug","confidence":"medium","sources_used":[{"uri":"roadmap/decisions.md#retry","tier":2,"label":"Retry policy decision","last_updated":"2026-05-11"}],"answer_summary":"The decision log specifies one retry after 48 hours. Two charges inside a day contradicts it.","gap_flag":"none","clarification_asked":false,"escalated_to":"payments area owner","ticket_ref":null,"review_status":"unreviewed","review_verdict":null}
+{"id":"ask-20260922-001","ts":"2026-09-22T09:14:00Z","skill_version":"0.4.1","config_version":"2026-09-08","asker":"lotta","asker_role":"support","product_area":"payments","question_raw":"Customer says the member was charged twice after a failed payment. Expected?","question_normalized":"duplicate charge after failed payment retry","verdict":"likely-bug","confidence":"medium","sources_used":[{"uri":"roadmap/decisions.md#retry","tier":2,"label":"Retry policy decision","last_updated":"2026-05-11"}],"answer_summary":"The decision log specifies one retry after 48 hours. Two charges inside a day contradicts it.","gap_flag":"none","clarification_asked":false,"escalated_to":"payments area owner","ticket_ref":null,"review_status":"unreviewed","review_verdict":null}
 ```
 
 ## The review loop this feeds
