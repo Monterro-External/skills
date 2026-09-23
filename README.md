@@ -1,6 +1,6 @@
 # Monterro product process plugin
 
-The product-side skills for the Monterro product development process. Engineering-side is Matt Pocock's skills plugin, unchanged; these skills produce the Product Ticket that his `grill-with-docs` and `wayfinder` pick up.
+The product-side skills for the Monterro product development process, plus the engineering-side checks that wrap it. Engineering-side is Matt Pocock's skills plugin, unchanged; these skills produce the Product Ticket that his `grill-with-docs` and `wayfinder` pick up, and review what his `implement` builds against the Spec.
 
 This repository is a Claude Code plugin marketplace holding one plugin, `monterro`.
 
@@ -43,6 +43,7 @@ Then, once per product repo:
 | `/monterro:solution-tournament` | Rank alternative solutions by blind pairwise judging against the ticket's own outcome |
 | `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.10 |
 | `/monterro:handover-triage` | The second gate, engineering's: reads a ticket at ready-for-handover against the engineering repo's code, ADRs and glossary, then hands it over on the grilling or the wayfinder route, or returns it to discovery with one reason code. Waits for the engineer before writing |
+| `/monterro:spec-review` | After `/implement`, before merge: reviews a change against its Spec issue and the Product Ticket behind it, and runs each requirement's test against the base commit, so a suite that passes for the wrong reason fails the review. Fixes nothing, moves no state |
 
 ## How these are built
 

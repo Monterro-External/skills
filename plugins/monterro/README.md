@@ -1,6 +1,6 @@
 # monterro plugin
 
-Product-side skills for the Monterro product development process. Engineering-side is Matt Pocock's skills plugin, unchanged; this plugin produces the Product Ticket that his `grill-with-docs` and `wayfinder` pick up.
+Product-side skills for the Monterro product development process, plus the engineering-side checks that wrap it. Engineering-side is Matt Pocock's skills plugin, unchanged; this plugin produces the Product Ticket that his `grill-with-docs` and `wayfinder` pick up, and reviews what his `implement` builds against the Spec.
 
 Skills graduate into this plugin from `../skills/src/` one at a time, once an eval run on the Beefcake repos passes. Every skill here follows the lean rule: one job, SKILL.md on one screen, no environment detection, reads the company's own files, config from `/monterro:setup`, and `disable-model-invocation: true` in the frontmatter so it runs only when a person types the slash command.
 
@@ -24,5 +24,6 @@ Skills graduate into this plugin from `../skills/src/` one at a time, once an ev
 | `/monterro:solution-tournament` | Rank alternative solutions for a ticket by blind pairwise judging against the ticket's own outcome, evolving the strongest candidates, ending in a favoured candidate and a validation plan. Refuses when the signals are too thin to judge against |
 | `/monterro:product-grill-with-docs` | The readiness gate. Checks a ticket against section 7 of the product ticket standard (v1.10, restated in the skill's `references/checks.md` for when the standard itself is not in the session), CONTEXT.md, the decision records and engineering's glossary, then moves it to ready-for-handover or leaves it in discovery with `needs-more-info` and the failing checks named. The only skill that opens that gate |
 | `/monterro:handover-triage` | The second gate, engineering's. Reads a ticket at ready-for-handover against the engineering repo's code, ADRs and glossary, then hands it over on the grilling or the wayfinder route and moves it to in-development, or returns it to discovery with `needs-more-info` and one of four reason codes. Prints the verdict and waits for the engineer. Creates nothing in the engineering team: the Spec or the map is the root and links back. The only skill that moves a ticket out of ready-for-handover |
+| `/monterro:spec-review` | Engineering side, run in the platform repo after `/implement`. Reviews a built change against its Spec issue: the Spec against the handover artifact standard and its Product Ticket, the sub-issues against the requirement IDs, and the diff against both. Runs each requirement's test against the base commit, so a suite that passes for the wrong reason fails the review. Posts the verdict on the Spec issue, fixes nothing, moves no state |
 
 Local development: `claude --plugin-dir ./plugin` from this folder, or from a product repo `claude --plugin-dir ../beefcake-workshop/plugin`.
