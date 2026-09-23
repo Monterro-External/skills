@@ -42,6 +42,7 @@ Then, once per product repo:
 | `/monterro:advance-ticket` | Diagnose where a ticket stands and prepare the cheapest next action toward handover |
 | `/monterro:solution-tournament` | Rank alternative solutions by blind pairwise judging against the ticket's own outcome |
 | `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.10 |
+| `/monterro:handover-triage` | The second gate, engineering's: reads a ticket at ready-for-handover against the engineering repo's code, ADRs and glossary, then hands it over on the grilling or the wayfinder route, or returns it to discovery with one reason code. Waits for the engineer before writing |
 
 ## How these are built
 
