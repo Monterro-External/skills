@@ -8,5 +8,5 @@
 - No implementation detail (modules, endpoints, schemas, frameworks) stated as a requirement; a kept idea is one line marked non-binding.
 - No vague adjective without a number: fast, scalable, secure, intuitive, robust, seamless.
 - Open questions three or fewer, each with owner and needed-by.
-- Vocabulary matches CONTEXT.md and the glossary where it was readable.
+- Vocabulary matches the glossary where it was readable.
 - Labels set: type, tier, area. State set. Screenshot attached if there was one.

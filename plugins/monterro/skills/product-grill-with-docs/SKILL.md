@@ -20,9 +20,9 @@ Paths come from `.claude/monterro.json`: the ticket home from `ticket_home` (the
 The yardsticks, in this order:
 
 - `product-ticket-standard.md`: the standard. Section 7 is the checklist; `references/checks.md` restates it as pass/fail rules and is the fallback if the standard is not found.
-- `context_file`: capabilities, principles, non-goals, product areas, vocabulary.
+- `context_file`: capabilities, principles, non-goals, product areas.
 - `strategy/decisions/README.md` in the product repo: the PDR index. Absent is fine and is reported as "no PDRs".
-- The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. Do not substitute the context file's short vocabulary list for it.
+- The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. It is the only vocabulary source; nothing in the product repo stands in for it.
 
 Then fetch the ticket through the tracker MCP by ID or link, or take pasted content. One ticket per run.
 

@@ -8,11 +8,11 @@ description: Sweep the Triage state of the product team and the For triage lines
 
 Two queues go in: the issues someone filed straight into the tracker's Triage state, and the findings the synthesis reports marked for triage. One board comes out, where every problem has exactly one embryo, typed and tiered, in `backlog`, with the customer's words and the evidence links on it. Completeness is enforced at grilling, never here; an embryo with an Intent, a verbatim signal, the fields and the links is finished.
 
-Paths and the tracker come from `.claude/monterro.json`: `tracker` (team, states, labels, tier field), or `tickets_dir` when `ticket_home` is files; templates from `templates`; non-goals and product areas from `context_file`; the decision log from `decisions` (default `roadmap/decisions.md`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
+Paths and the tracker come from `.claude/monterro.json`: `tracker` (team, states, labels, tier field), or `tickets_dir` when `ticket_home` is files; templates from `templates`; non-goals and product areas from `context_file`; vocabulary from `glossary`; the decision log from `decisions` (default `roadmap/decisions.md`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
 
 ## 1. Read
 
-1. `context_file`: the product-area taxonomy, the non-goals, the segments.
+1. `context_file`: the product-area taxonomy, the non-goals, the segments. Then `glossary` if it resolves; if it does not, say so in the closing note.
 2. The decision log and every release note from the last twelve months.
 3. The tier templates.
 4. Every issue in the team's `triage` state, fully, with attachments and comments.
@@ -51,7 +51,7 @@ For every **keep**: create the embryo in the team, in the template for its tier 
 
 For every **merge**: comment on the surviving ticket with the new source and evidence link, mark the Triage issue as duplicate of it. For every **leave**: comment with the evidence link, nothing else. For every **decline**: move the Triage issue to `canceled` with a comment quoting the non-goal, decision or release note; a report finding declined the same way gets a line in the closing note and no ticket. **Then name the twins.** Search the board for tickets in `backlog` or `todo` carrying the same declined problem and list them in the closing note under Declined twins on the board, with their ids and the same quoted line. Do not move them: they may predate the decision or belong to someone. Declining the queue item and leaving four copies in backlog is how a non-goal comes back.
 
-Vocabulary from `context_file`: existing terms, never renamed, never defined in the ticket.
+Vocabulary from the glossary: existing terms, never renamed, never defined in the ticket.
 
 ## 6. Check
 

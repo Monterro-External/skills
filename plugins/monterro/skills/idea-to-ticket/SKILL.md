@@ -12,7 +12,7 @@ The ticket lives in exactly one place, named by `ticket_home` in `.claude/monter
 
 ## 1. Read
 
-The config, then `context_file` (product areas, vocabulary, non-goals, what already ships), the tier templates, and the existing tickets in the ticket home only: the tracker team's issues when `ticket_home` is a tracker, the files in `tickets_dir` when it is files. Never both. If `glossary` resolves, read it. Read nothing else outside this repo.
+The config, then `context_file` (product areas, non-goals, what already ships), the tier templates, and the existing tickets in the ticket home only: the tracker team's issues when `ticket_home` is a tracker, the files in `tickets_dir` when it is files. Never both. If `glossary` resolves, read it; it is the only source of vocabulary. Read nothing else outside this repo.
 
 ## 2. Preserve
 
@@ -50,7 +50,7 @@ If the session is unattended and no review is possible, do not create the ticket
 
 ## 7. Write
 
-The body is the template's sections for the tier, nothing more and nothing above the first heading. Vocabulary from CONTEXT.md and the glossary: use the existing terms, never define or cite them in the ticket, and never rename one. When the idea needs a term the glossary lacks, or needs an existing term to mean something new, keep the PM's word and list it in the closing note. No implementation detail stated as a requirement anywhere; where an idea is worth keeping it is one line marked non-binding. Status: always `backlog`, whatever the tier and however complete the ticket is. The skill never sets `discovery`; a human does, and the closing lines say whether to.
+The body is the template's sections for the tier, nothing more and nothing above the first heading. Vocabulary from the glossary: use the existing terms, never define or cite them in the ticket, and never rename one. When the idea needs a term the glossary lacks, or needs an existing term to mean something new, keep the PM's word and list it in the closing note. No implementation detail stated as a requirement anywhere; where an idea is worth keeping it is one line marked non-binding. Status: always `backlog`, whatever the tier and however complete the ticket is. The skill never sets `discovery`; a human does, and the closing lines say whether to.
 
 For M and L, split the idea into the problem it implies and the solution it proposes. The problem drives the ticket. The solution stays as a non-binding leading-candidate line at the end of the ticket, unless it is genuinely decided (a contract names it), in which case it is a decision with its rationale. That line holds only what the PM proposed; never add ideas of your own.
 

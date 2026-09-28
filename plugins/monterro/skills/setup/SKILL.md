@@ -57,7 +57,7 @@ Use the structured question tool if available. Defaults in brackets.
 Only create, never overwrite:
 
 - `tickets/` with `TEMPLATE-S.md`, `-M.md`, `-L.md` copied from `references/templates/` in this plugin, and a `README.md` stating the conventions (one file per ticket, `PREFIX-nnnn-slug.md`, id in frontmatter matches filename, statuses).
-- `strategy/CONTEXT.md` as a stub with the section headings the grill reads (what we sell and to whom, strategy, principles, non-goals, product areas, vocabulary, what we already ship) and a first line saying it is a stub the CPO owns.
+- `strategy/CONTEXT.md` as a stub with the section headings the grill reads (what we sell and to whom, strategy, principles, non-goals, product areas, a vocabulary section that only points at the glossary, what we already ship) and a first line saying it is a stub the CPO owns.
 
 Say what was created and what was found.
 
