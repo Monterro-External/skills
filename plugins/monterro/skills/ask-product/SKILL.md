@@ -1,8 +1,6 @@
 ---
-name: ask-product
-disable-model-invocation: true
-description: Answer one question about how the product works, from the product's own sources, with a verdict, a confidence and a citation on every claim, and log the exchange. Use when support, sales, CS or anyone else asks whether a behaviour is expected, whether something is supported, how a setting works, or whether what they are seeing is a bug. Reads only, files nothing, starts no other skill.
----
+
+## name: ask-product disable-model-invocation: true description: Answer a question about how the product works, answered from the product's own sources, with a verdict, a confidence and a citation on every claim, and log the exchange. 
 
 # ask-product
 
@@ -71,6 +69,8 @@ Not read: <the configured source that was missing or unreachable, or omit>
 - Answer from one tier 6 source alone.
 - Say "not supported" where the sources are merely silent. Silence is `unknown-gap`.
 
+
+
 ## 6. Log, then close
 
 Compose the answer first, then append one record per invocation to `ask_log` in the schema of `references/log-schema.md`. Strip customer names and personal data from `question_raw` at write time; an account goes in as its tenant id.
@@ -86,3 +86,4 @@ Verdict: <label>   Confidence: <level>   Area: <product_area>
 Gap: <none|missing-doc|stale-doc|conflicting-sources|no-source>
 Logged: <path>, record <id>
 ```
+

@@ -1,8 +1,6 @@
 # Monterro product process plugin
 
-The product-side skills for the Monterro product development process, plus the engineering-side checks that wrap it. Engineering-side is Matt Pocock's skills plugin, unchanged; these skills produce the Product Ticket that his `grill-with-docs` and `wayfinder` pick up, and review what his `implement` builds against the Spec.
-
-This repository is a Claude Code plugin marketplace holding one plugin, `monterro`.
+The product-side skills for the Monterro product development process. This repository is a Claude Code plugin marketplace holding one plugin, `monterro`.
 
 ## Install
 
@@ -23,30 +21,27 @@ Then, once per product repo:
 
 ## The skills
 
-| Skill | Job |
-|---|---|
-| `/monterro:setup` | Once per product repo. Where tickets live, where the reference files are |
-| `/monterro:idea-to-ticket` | A PM's own idea, observation or defect into a Product Ticket in the right tier's template |
-| `/monterro:brainstorm-ideas` | Divergence and convergence over a customer pain, ending in idea cards with named riskiest assumptions |
-| `/monterro:interview-summary` | One raw transcript into the research note, written blind to the rest of the round, every quote timestamped |
-| `/monterro:interview-synthesis` | A round's notes into the synthesis report: themes with two or more independent voices |
-| `/monterro:support-synthesis` | A period of the support queue into the synthesis report, counted by reading rather than by tag |
-| `/monterro:support-dig` | One hypothesis against the whole queue. Writes nothing |
-| `/monterro:ask-product` | One question about how the product works, answered from the product's own sources with a verdict, a confidence and a citation on every claim. Reads only, files nothing |
-| `/monterro:feature-request-ledger` | The request channel into the one living ledger. Never a ticket |
-| `/monterro:feedback-synthesis` | NPS, app reviews and member feedback, the operator's voice kept apart from the member's |
-| `/monterro:sales-synthesis` | Call transcripts and lost deals, market kept apart from book |
-| `/monterro:account-synthesis` | CSM notes and escalations, one section per account, weighted by ARR |
-| `/monterro:synthesis` | The cross-source pass: what two or more independent channels show |
-| `/monterro:signal-triage` | Triage and the reports' For triage lines into one typed, tiered embryo per problem |
-| `/monterro:advance-ticket` | Diagnose where a ticket stands and prepare the cheapest next action toward handover |
-| `/monterro:solution-tournament` | Rank alternative solutions by blind pairwise judging against the ticket's own outcome |
-| `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.10 |
-| `/monterro:handover-triage` | The second gate, engineering's: reads a ticket at ready-for-handover against the engineering repo's code, ADRs and glossary, then hands it over on the grilling or the wayfinder route, or returns it to discovery with one reason code. Waits for the engineer before writing |
-| `/monterro:spec-review` | After `/implement`, before merge: reviews a change against its Spec issue and the Product Ticket behind it, and runs each requirement's test against the base commit, so a suite that passes for the wrong reason fails the review. Fixes nothing, moves no state |
 
-## How these are built
+| Skill                               | Job                                                                                                                                                                                                                                                                            |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/monterro:setup`                   | Once per product repo. Where tickets live, where the reference files are                                                                                                                                                                                                       |
+| `/monterro:idea-to-ticket`          | A PM's own idea, observation or defect into a Product Ticket in the right tier's template                                                                                                                                                                                      |
+| `/monterro:brainstorm-ideas`        | Divergence and convergence over a customer pain, ending in idea cards with named riskiest assumptions                                                                                                                                                                          |
+| `/monterro:interview-summary`       | One raw transcript into the research note, written blind to the rest of the round, every quote timestamped                                                                                                                                                                     |
+| `/monterro:interview-synthesis`     | A round's notes into the synthesis report: themes with two or more independent voices                                                                                                                                                                                          |
+| `/monterro:support-synthesis`       | A period of the support queue into the synthesis report, counted by reading rather than by tag                                                                                                                                                                                 |
+| `/monterro:support-dig`             | One hypothesis against the whole queue. Writes nothing                                                                                                                                                                                                                         |
+| `/monterro:ask-product`             | One question about how the product works, answered from the product's own sources with a verdict, a confidence and a citation on every claim. Reads only, files nothing                                                                                                        |
+| `/monterro:feature-request-ledger`  | The request channel into the one living ledger.                                                                                                                                                                                                                                |
+| `/monterro:feedback-synthesis`      | NPS, app reviews and member feedback, the operator's voice kept apart from the member's                                                                                                                                                                                        |
+| `/monterro:sales-synthesis`         | Call transcripts and lost deals, market kept apart from book                                                                                                                                                                                                                   |
+| `/monterro:account-synthesis`       | CSM notes and escalations, one section per account, weighted by ARR                                                                                                                                                                                                            |
+| `/monterro:synthesis`               | The cross-source pass: what two or more independent channels show                                                                                                                                                                                                              |
+| `/monterro:signal-triage`           | Triage and the reports' For triage lines into one typed, tiered embryo per problem                                                                                                                                                                                             |
+| `/monterro:advance-ticket`          | Diagnose where a ticket stands and prepare the cheapest next action toward handover                                                                                                                                                                                            |
+| `/monterro:solution-tournament`     | Rank alternative solutions by blind pairwise judging against the ticket's own outcome                                                                                                                                                                                          |
+| `/monterro:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.10                                                                                                                  |
+| `/monterro:handover-triage`         | The second gate, engineering's: reads a ticket at ready-for-handover against the engineering repo's code, ADRs and glossary, then hands it over on the grilling or the wayfinder route, or returns it to discovery with one reason code. Waits for the engineer before writing |
+| `/monterro:spec-review`             | Reviews a Spec issue against the Product Ticket behind it, and runs each requirement's test against the base commit, so a suite that passes for the wrong reason fails the review. Fixes nothing, moves no state                                                               |
 
-One job per skill, SKILL.md on one screen, no environment detection, reads the company's own files, configuration from `/monterro:setup`. Every skill carries `disable-model-invocation: true`, so it runs only when a person types the slash command and never because the model thought it fit.
 
-A skill enters this plugin only after an eval run against a reference product passes.

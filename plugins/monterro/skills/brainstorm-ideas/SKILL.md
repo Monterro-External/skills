@@ -1,7 +1,7 @@
 ---
 name: brainstorm-ideas
 disable-model-invocation: true
-description: "Manual skill only. Runs a structured divergence and convergence pass over a customer pain, ending in idea cards with named riskiest assumptions and a discard list. Use only when the user invokes it by name or as /brainstorm-ideas. Someone asking to brainstorm, ideate, generate solutions, think through options, or explore what could be built is not by itself a request for this skill; answer them directly instead."
+description: "Runs a structured divergence and convergence pass over a customer pain, ending in idea cards with named riskiest assumptions and a discard list."
 ---
 
 # Brainstorm Ideas

@@ -1,8 +1,8 @@
 ---
-name: idea-to-ticket
+
+## name: idea-to-ticket
 disable-model-invocation: true
-description: Turn a PM's own idea, observation or defect report into a Product Ticket in the template for its size. The single entrance for anything a PM brings themselves, any type (bug, feature, initiative) and any tier (S, M, L). Use when a PM says they have an idea, noticed something wrong or missing, wants to ticket something, or pastes a rough idea or a screenshot to structure. Not for a queue of customer signals (signal-triage) and not for checking an existing ticket (grilling).
----
+description: Turn a PM's own idea, observation or defect report into a Product Ticket in the template for its size. 
 
 # idea-to-ticket
 
@@ -70,3 +70,4 @@ Change or problem: <one line>
 Missing before grilling (S) / before the gate (M, L): <the gaps, or "nothing: ready to grill, recommend moving it to discovery">
 Glossary gaps: <terms the glossary lacks or that need a new meaning, or none>
 ```
+

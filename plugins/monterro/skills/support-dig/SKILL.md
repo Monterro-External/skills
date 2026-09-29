@@ -1,7 +1,7 @@
 ---
 name: support-dig
 disable-model-invocation: true
-description: Test one hypothesis against the whole support queue and return the evidence pack, every matching ticket by tenant and month, the tenants absent, quotes with ids, and what would confirm it elsewhere. Reads tickets and release notes only, writes nothing. Not for a period (support-synthesis) and not for tickets.
+description: Test one hypothesis against the whole support queue and return the evidence pack.
 ---
 
 # support-dig
