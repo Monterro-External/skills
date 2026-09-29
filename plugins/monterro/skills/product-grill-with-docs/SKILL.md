@@ -1,7 +1,7 @@
 ---
 name: product-grill-with-docs
 disable-model-invocation: true
-description: Run the readiness gate on a Product Ticket before it crosses to engineering. Checks the ticket against section 7 of the product-ticket-standard, CONTEXT.md, the product decision records and engineering's domain glossary, then either moves it from discovery to ready-for-handover or leaves it in discovery with the needs-more-info label and the failing checks named. Use whenever a PM asks to grill a ticket, check if a ticket is ready for handover, run the readiness gate, or move a ticket to ready-for-handover. Not for diagnosing where a ticket stands in discovery (that is advance-ticket) and not for engineering's grill-with-docs, which runs after handover.
+description: The readiness gate. Check a ticket against the product ticket standard and move it to ready-for-handover, or leave it in discovery with the failing checks named.
 ---
 
 # product-grill-with-docs
@@ -21,7 +21,7 @@ The yardsticks, in this order:
 
 - `product-ticket-standard.md`: the standard. Section 7 is the checklist; `references/checks.md` restates it as pass/fail rules and is the fallback if the standard is not found.
 - `context_file`: capabilities, principles, non-goals, product areas.
-- `strategy/decisions/README.md` in the product repo: the PDR index. Absent is fine and is reported as "no PDRs".
+- `decisions`: the decision log. Absent is fine and is reported as "no decision log".
 - The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. It is the only vocabulary source; nothing in the product repo stands in for it.
 
 Then fetch the ticket through the tracker MCP by ID or link, or take pasted content. One ticket per run.
@@ -32,7 +32,7 @@ Walk `references/checks.md` top to bottom and record pass, fail or skipped for e
 
 For an S, only checks 1, 2, 5, 7, 10, 11 and 12 apply. The rest are marked not-applicable.
 
-Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, an accepted PDR in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes.
+Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a decision-log entry in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes.
 
 ## 3. Verdict
 
@@ -49,7 +49,7 @@ Grill: <ticket id> <title>, tier <S/M/L>
 Verdict: ready-for-handover | needs-more-info (stays in discovery)
 Failing: <check number and name: what fails, smallest fix>  (one line each, or "none")
 Skipped: <check number: why>  (or "none")
-Notes: <where CONTEXT.md, PDRs or the glossary were silent, one line each>  (or "none")
+Notes: <where CONTEXT.md, the decision log or the glossary were silent, one line each>  (or "none")
 ```
 
 Post it as a comment addressed to the ticket owner. If the tracker is read-only, deliver it in the conversation and say it was not written to the ticket.
