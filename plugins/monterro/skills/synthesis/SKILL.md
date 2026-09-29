@@ -1,7 +1,7 @@
 ---
 name: synthesis
 disable-model-invocation: true
-description: Read every synthesis report, the request ledger and the cohort analyses, and write the cross-source report, the findings that two or more independent channels show, the ones only one channel shows kept apart, and the patterns nobody asked for, where a member behaviour in one report and a number in another are the same thing. Reads discovery only, never a raw signal. Not for one channel (the per-channel synthesis skills) and not for tickets (signal-triage).
+description: Read every synthesis report, the request ledger and the cohorts, and write the cross-source report: what two or more independent channels show. Reads reports only, never raw signals.
 ---
 
 # synthesis

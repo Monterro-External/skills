@@ -1,7 +1,7 @@
 ---
 name: feedback-synthesis
 disable-model-invocation: true
-description: Read a period of NPS comments, app reviews and member feedback and write the synthesis report, themes clustered by what the person was trying to do, the operator's voice and the member's voice kept apart, and the members who asked for nothing named. Reads those three folders and release notes only. Not for the support queue (support-synthesis) and not for tickets.
+description: Read a period of NPS comments, app reviews and member feedback and write the synthesis report, the operator's voice kept apart from the member's.
 ---
 
 # feedback-synthesis

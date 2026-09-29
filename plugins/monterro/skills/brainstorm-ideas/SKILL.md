@@ -6,8 +6,6 @@ description: "Runs a structured divergence and convergence pass over a customer 
 
 # Brainstorm Ideas
 
-This is a manual skill. It runs when the user calls it, and only then. If it has somehow triggered off ordinary ideation language rather than a deliberate invocation, stop and answer the user's actual question instead.
-
 Generate and then ruthlessly filter solution ideas for a specific pain.
 
 Rule one: brainstorm against a pain, never against a technology or a blank page. If the input is "let's do something with AI", first extract which pain it should serve. If no pain can be named, stop and say so; the fix is more evidence, not more ideas.

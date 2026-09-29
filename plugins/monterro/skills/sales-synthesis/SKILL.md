@@ -1,7 +1,7 @@
 ---
 name: sales-synthesis
 disable-model-invocation: true
-description: Read a period of sales call transcripts and lost-deal debriefs and write the synthesis report, themes ranked by where in the call they were raised and what they cost, the market's voice kept apart from the book's, and the losses we should have taken named. Reads the sales folder, CONTEXT.md and the decision log only. Not for renewal risk in the book (account-synthesis) and not for tickets.
+description: Read a period of sales calls and lost-deal debriefs and write the synthesis report, themes ranked by where in the call they came up and what they cost.
 ---
 
 # sales-synthesis

@@ -1,7 +1,7 @@
 ---
 name: advance-ticket
 disable-model-invocation: true
-description: Read a Product Ticket, diagnose where it stands against the product-ticket-standard, and name and prepare the cheapest next action to move it toward engineering handover. Use whenever a PM asks what's next for a ticket, wants to move a ticket forward, advance a ticket, unblock a ticket, get a status diagnosis of a product ticket in discovery, or pastes a ticket link or ID asking what to do with it. Also use when someone asks "is this ticket ready for the gate" or "is this ready for handover". Not for creating new tickets (that is idea-to-ticket or signal intake) and not the final quality gate itself (that is product grilling).
+description: Diagnose where a Product Ticket stands and prepare the cheapest next action toward handover. Not for new tickets (idea-to-ticket) or the readiness gate (product-grill-with-docs).
 ---
 
 # advance-ticket

@@ -1,7 +1,7 @@
 ---
 name: interview-synthesis
 disable-model-invocation: true
-description: Read the written-up notes from an interview round and write the synthesis report, themes supported by more than one participant, with every claim traceable to a note and a quote. Reads notes only, never transcripts. Use when a round of interviews has been written up and someone asks what the research says, to synthesise, cluster or find themes across interviews, or to prepare research for signal-triage or the opportunity solution tree. Not for a single interview (interview-summary) and not for tickets.
+description: Read a round's interview notes and write the synthesis report, themes carried by two or more participants. Reads notes only, never transcripts.
 ---
 
 # interview-synthesis

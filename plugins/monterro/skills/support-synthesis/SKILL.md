@@ -1,7 +1,7 @@
 ---
 name: support-synthesis
 disable-model-invocation: true
-description: Read a period of the support queue and write the synthesis report, themes clustered by what the customer was trying to do, counted by reading rather than by tag, with the tenants absent from each theme named. Reads tickets and release notes only. Not for one hypothesis (support-dig) and not for tickets.
+description: Read a period of the support queue and write the synthesis report, themes by what customers were trying to do, counted by reading rather than by tag.
 ---
 
 # support-synthesis

@@ -1,7 +1,7 @@
 ---
 name: handover-triage
 disable-model-invocation: true
-description: The second gate, engineering's. Takes one Product Ticket the grill has passed, reads it as engineering will receive it, against the engineering repo's code, ADRs and glossary as well as the product documents, and either hands it to engineering on the grilling or the wayfinder route, moving it to in-development, or returns it to discovery with the needs-more-info label and one reason code. Prints the verdict and waits before writing. Use when someone asks to triage a handover, accept a ticket into engineering, route a ticket to grilling or wayfinder, or pick up what is in ready-for-handover. Not for the readiness gate (product-grill-with-docs), and not for engineering's own /triage, which works the platform team's inbox.
+description: Engineering's gate. Read a ticket at ready-for-handover against the code, then hand it to engineering or return it to discovery with one reason code. Waits for an ok before writing.
 ---
 
 # handover-triage

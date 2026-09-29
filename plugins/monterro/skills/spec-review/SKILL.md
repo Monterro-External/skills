@@ -1,7 +1,7 @@
 ---
 name: spec-review
 disable-model-invocation: true
-description: Review a built change against its Spec before it merges. Checks the Spec issue against the handover artifact standard, the sub-issues against the Spec's requirement IDs, and the diff against both, including whether each requirement's test would have failed without the change. Posts the verdict on the Spec issue. Use when an engineer asks to review a change against its spec, check a branch or PR before merge, check spec coverage or traceability, or confirm the tests actually prove the requirements. Runs in the engineering repo after /implement. Not for the product-side readiness gate (that is product-grill-with-docs) and not a general code review.
+description: Engineering side, after /implement. Review a change against its Spec and check that each requirement's test fails without the change. Posts a verdict, fixes nothing.
 ---
 
 # spec-review

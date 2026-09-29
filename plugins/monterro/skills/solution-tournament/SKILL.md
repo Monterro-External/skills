@@ -1,7 +1,7 @@
 ---
 name: solution-tournament
 disable-model-invocation: true
-description: Systematically explore and rank alternative solutions for a Product Ticket by running an iterative idea tournament, seeded alternatives, blind pairwise judging against the ticket's outcome, and evolution of the strongest candidates, ending in a favored candidate plus a validation plan. Use whenever a PM wants to brainstorm alternatives for a ticket, challenge or stress-test their proposed idea, explore the solution space before committing, find the best solution for a ticket, compare solution options, or asks for a solution tournament or idea evolution on a ticket. Not for validating a chosen idea with customers (that is validate-value) and not for prioritizing between tickets (that is the gate). Refuses frankly when the ticket's signals are too thin to judge against, and coaches the PM on what to add first.
+description: Rank alternative solutions for a ticket by blind pairwise judging against the ticket's outcome, ending in a favoured candidate and a validation plan. Refuses when the ticket's evidence is too thin.
 ---
 
 # solution-tournament

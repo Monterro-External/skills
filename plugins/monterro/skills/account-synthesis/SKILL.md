@@ -1,7 +1,7 @@
 ---
 name: account-synthesis
 disable-model-invocation: true
-description: Read a period of CSM notes and escalation threads and write the account report, one section per account rather than per theme, with what each account is living with, the workarounds that never became tickets, what is on the renewal sheet and what we promised. Weighted by ARR, never by mention count. Reads the CSM and escalation folders, release notes and the board. Not for the market (sales-synthesis) and not for tickets.
+description: Read a period of CSM notes and escalations and write the account report, one section per account, weighted by ARR. Not for the market (sales-synthesis).
 ---
 
 # account-synthesis

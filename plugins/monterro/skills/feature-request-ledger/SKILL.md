@@ -1,7 +1,7 @@
 ---
 name: feature-request-ledger
 disable-model-invocation: true
-description: Sweep the channel where sales and CS post what customers ask for, cluster messages by the ask rather than the wording, and update the one living feature-request ledger with accounts, claimed repeats, in-thread decisions and a status per ask. Never a ticket. Use when someone asks to sweep or catch up on the request channel, what customers have been asking for, or whether an ask has come up before. Not for the support queue (support-synthesis) and not for one hypothesis (support-dig).
+description: Sweep the request channel and update the one living feature-request ledger, one row per ask. Never creates a ticket.
 ---
 
 # feature-request-ledger
