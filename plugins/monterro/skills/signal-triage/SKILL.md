@@ -1,9 +1,7 @@
 ---
-
-## name: signal-triage
+name: signal-triage
 disable-model-invocation: true
 description: Sweep the Triage state of the product team and the For triage lines of every synthesis report, and turn each problem into one typed, tiered ticket embryo in backlog with the signal preserved, or merge it into the ticket that already exists, or close it against a non-goal or a release note. The only skill that moves a ticket out of triage.
-
 ---
 
 # signal-triage
@@ -66,8 +64,6 @@ Against `references/checklist.md` for every created or edited embryo, and:
 - every merge that changed the survivor's type, tier, area or title says so in the comment, with the evidence
 - no embryo states a solution as a requirement, and no report's did-nothing or one-voice item became a ticket
 
-
-
 ## 7. Close
 
 ```
@@ -78,4 +74,3 @@ Declined twins on the board: <id · the same problem, left where it is>, one lin
 Re-scoped on merge: <id · what changed · why>, one line each
 Missing before grilling: <per created S, what the source did not give: reproduction, regression clause>
 ```
-

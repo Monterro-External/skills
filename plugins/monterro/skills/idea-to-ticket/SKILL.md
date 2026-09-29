@@ -1,8 +1,8 @@
 ---
-
-## name: idea-to-ticket
+name: idea-to-ticket
 disable-model-invocation: true
-description: Turn a PM's own idea, observation or defect report into a Product Ticket in the template for its size. 
+description: Turn a PM's own idea, observation or defect report into a Product Ticket in the template for its size.
+---
 
 # idea-to-ticket
 
@@ -70,4 +70,3 @@ Change or problem: <one line>
 Missing before grilling (S) / before the gate (M, L): <the gaps, or "nothing: ready to grill, recommend moving it to discovery">
 Glossary gaps: <terms the glossary lacks or that need a new meaning, or none>
 ```
-

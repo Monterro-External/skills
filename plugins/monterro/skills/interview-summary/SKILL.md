@@ -1,6 +1,5 @@
 ---
-
-## name: interview-summary
+name: interview-summary
 disable-model-invocation: true
 description: Write the research note for one raw interview transcript, the way a researcher writes it up the day after the conversation.
 ---
@@ -52,8 +51,6 @@ Body, in the exemplar's order and register:
 - **Follow-ups.** What to check, who to ask, what data to pull. Never a ticket.
 - **Not covered.** Guide questions that were not asked or not answered, one line each. Omit the section only if the guide was fully covered.
 
-
-
 ## 5. Check
 
 Before saving, confirm each of these against the transcript:
@@ -76,4 +73,3 @@ Note: <path>   From: <transcript path>   Quotes: <n, all timestamped>
 Surprises worth carrying into synthesis: <one line>
 Not covered: <guide questions unanswered, or none>
 ```
-
