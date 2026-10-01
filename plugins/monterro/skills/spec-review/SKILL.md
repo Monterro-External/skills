@@ -22,7 +22,7 @@ Then, one change per run:
 
 - **The Spec issue**, by id or link, with its comments and sub-issues, or pasted content. Given none, take it from the branch name or the commit messages; more than one candidate, ask once.
 - **The diff**: the branch or PR named, against its merge base with the default branch unless a base is given. Record both commit ids.
-- **The Product Ticket** the Spec's first line links to, from the tracker or the file it names. Read it for tier, behaviour and regression clause, which check 1 holds the Spec to. This skill never writes to it.
+- **The Product Ticket** the Spec's first line links to, from the tracker or the file it names. Read it for tier, behaviour and acceptance scenarios, which check 1 holds the Spec to. This skill never writes to it.
 
 ## 2. Run the checks
 

@@ -33,6 +33,13 @@ _Who is affected: segment, persona, how many. Link every claim._
 
 **Expected:** _what should happen_
 
-**Regression clause:** When _X_, the system shall continue to _Y_.
+## Acceptance scenarios
+
+Plain Given / When / Then, declarative, no UI choreography. Always including the
+error case and the case we would be most upset to see broken.
+
+- **AS-1 (happy path)**: Given ... when ... then ...
+- **AS-2 (error case)**: Given ... when ... then ...
+- **AS-3 (regression)**: Given ... when ... then ... continues to ...
 
 **Reference:** _optional. Link or attachment showing the chosen design, and its precedence: binding or illustrative. Remove the line if there is none._

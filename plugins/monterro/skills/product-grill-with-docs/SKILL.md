@@ -40,7 +40,7 @@ All applicable checks pass: set status `ready-for-handover`, remove the `needs-m
 
 Any check fails or is skipped: leave the status at `discovery`, add the `needs-more-info` label, and post the verdict block. Skipped counts as failing; a gate that passes on an unreadable glossary is not a gate.
 
-Do not fix the ticket. Draft the fix in the verdict where it is short (a rewritten Intent sentence, a regression clause), and leave the edit to the PM. The gate checks; the author writes.
+Do not fix the ticket. Draft the fix in the verdict where it is short (a rewritten Intent sentence, an acceptance scenario), and leave the edit to the PM. The gate checks; the author writes.
 
 ## 4. Verdict block
 
