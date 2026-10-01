@@ -1,6 +1,6 @@
 # Readiness checks
 
-Section 7 of `product-ticket-standard.md` at **v1.10**, restated as pass/fail rules, and the fallback when the standard itself is not reachable in the session. Numbers are stable; skills and evals refer to them. Applies-to column: S means the check runs for S-tier tickets; all others run for M and L only.
+Section 7 of `product-ticket-standard.md` at **v1.12**, restated as pass/fail rules, and the fallback when the standard itself is not reachable in the session. Numbers are stable; skills and evals refer to them. Applies-to column: S means the check runs for S-tier tickets; all others run for M and L only.
 
 Where this file and the standard disagree, the standard wins and this file is wrong: say so in the verdict's Notes rather than grading against both.
 
