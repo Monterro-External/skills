@@ -12,7 +12,7 @@ The ticket lives in exactly one place, named by `ticket_home` in `.claude/monter
 
 ## 1. Read
 
-The config, then `context_file` (product areas, non-goals, what already ships), the tier templates, and the existing tickets in the ticket home only: the tracker team's issues when `ticket_home` is a tracker, the files in `tickets_dir` when it is files. Never both. If `glossary` resolves, read it; it is the only source of vocabulary. Read nothing else outside this repo.
+The config, then `context_file` (product areas, non-goals, what already ships), the tier templates, and the existing tickets in the ticket home only: the tracker team's issues when `ticket_home` is a tracker, the files in `tickets_dir` when it is files. Never both. If `glossary` resolves, read it; it is the only source of vocabulary. Read nothing else outside this repo, and no source code inside it. A defect is written as what the user sees, current and expected; its technical cause is engineering's to find after handover, and a cause the PM suggests is kept as one non-binding line.
 
 ## 2. Preserve
 
@@ -32,7 +32,7 @@ If the idea is a stated non-goal in CONTEXT.md, cite it and stop; changing CONTE
 
 ## 4. Ask one question at a time
 
-From `references/questions.md`, only what the PM has not already said, in the file's priority order. One question per message, in chat, plain text: ask it, stop, wait for the answer. Never a numbered list of questions, never two in one message. The answer may settle later questions, so re-check the list before each one. Budget: S at most four questions, M and L at most five. If the PM says "skip" or "enough", stop asking. Unanswered questions become guesses for the review in step 6, never blockers.
+From `references/questions.md`, only what the PM has not already said, in the file's priority order. One question per message, in chat, plain text: ask it, stop, wait for the answer. Never a numbered list of questions, never two in one message. The answer may settle later questions, so re-check the list before each one. Budget: S at most three questions, M and L at most five. If the PM says "skip" or "enough", stop asking. Unanswered questions become guesses for the review in step 6, never blockers.
 
 ## 5. Dedup
 
@@ -56,17 +56,20 @@ For M and L, split the idea into the problem it implies and the solution it prop
 
 An M or L at intake is an embryo and should read like one: the decisions section holds only the calls actually made (usually zero to two), Acceptance scenarios sketch the main path and the error case, and an L's success criteria are marked as hypotheses. Sections that discovery will fill stay short or empty and say so.
 
+A decision that meets the bar in `references/pdr.md` is written as a PDR file in the `decisions` folder with status `proposed`, and the ticket's decisions section carries only `See PDR-nnnn: <title>` for it. Decisions below the bar stay written out in the ticket. Writing the PDR happens after the PM's ok in step 6, never before.
+
 **File home**: copy the template, keep every frontmatter field, fill what you know, leave the rest null. Next id in sequence, filename `PREFIX-nnnn-slug.md`.
 
 **Tracker home**: the tracker holds the fields, the description holds the sections. See `references/tracker.md` for the mapping. Never paste frontmatter, a field table, an id, or a "source of truth" line into the description; the tracker's own identifier is the id and the title carries no prefix.
 
 ## 8. Check and close
 
-File home: run `validator` if configured, fix what fails, run again. Tracker home: check the body against `references/checklist.md` yourself. Then four lines:
+File home: run `validator` if configured, fix what fails, run again. Tracker home: check the body against `references/checklist.md` yourself. Then five lines:
 
 ```
 Created: <path or issue link>   Type: <t>   Tier: <T>   Status: <s>
 Change or problem: <one line>
 Missing before grilling (S) / before the gate (M, L): <the gaps, or "nothing: ready to grill, recommend moving it to discovery">
 Glossary gaps: <terms the glossary lacks or that need a new meaning, or none>
+Decision records: <PDR ids written, as proposed for a human to accept, or none>
 ```

@@ -41,6 +41,7 @@ _What customers do differently once this ships._
 ## Decisions made
 
 - _Decision, and why._
+- _See PDR-nnnn: <title>, for a decision that binds beyond this ticket (see the decisions folder)._
 
 _Prompts: permissions · plan gating · existing customer data · localisation · what the customer is told when it fails._
 

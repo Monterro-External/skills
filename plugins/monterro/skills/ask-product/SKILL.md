@@ -18,7 +18,7 @@ Clarify at most **once**, one question, and only when the verdict genuinely turn
 
 Refuse two kinds outright and route each to where the answer actually lives:
 
-- **A specific member's or tenant's live state.** Not the corpus's to know. Route to the tenant's own records, or, for our own staff, the internal admin surface. Never route to "support" without checking who is asking; support is the most common asker.
+- **A specific end user's or customer account's live state.** Not the corpus's to know. Route to the account's own records, or, for our own staff, the internal admin surface. Never route to "support" without checking who is asking; support is the most common asker.
 - **A ship date or a commitment.** Route to the product team, which owns that conversation. Say what is sayable instead: what has passed the gate and what is being built first.
 
 A refusal is logged like any other invocation, with `verdict: null` and the `refused` field naming which of the two fired. A rising rate of date questions is something the product team should know.
@@ -28,11 +28,11 @@ A refusal is logged like any other invocation, with `verdict: null` and the `ref
 In precedence order, and all of it before composing anything:
 
 1. Evidence the asker supplied: screenshot, log, recording, ticket id.
-2. `context_file`, `decisions`, the roadmap page next to the decision log, and any ticket already past discovery covering the area. Read the roadmap for what is intended and sequenced; its dates are decision and review dates, never ship dates, and never leave in an answer as one.
+2. `context_file`, the `accepted` PDRs in `decisions` (its `README.md` index first), the roadmap page in `roadmap/`, and any ticket already past discovery covering the area. Read the roadmap for what is intended and sequenced; its dates are decision and review dates, never ship dates, and never leave in an answer as one.
 3. `releases`, newest first. Dates matter here more than wording.
 4. `docs`, the user documentation, if the config names one.
 5. Known issues: open tickets on the board, through the tracker MCP.
-6. Everything else: the support queue through `npm run support -- list --grep`, the request channel, CSM notes, the synthesis reports. Corroborating only, never the sole basis for a verdict.
+6. Everything else: the support queue (through `support_cli` with a text search when it is set, otherwise by searching the export files in `support`), the request channel, CSM notes, the synthesis reports. Corroborating only, never the sole basis for a verdict.
 
 Search by words the customer would use, in every language the queue holds, never by tag. Stop at the tier that settles it; do not read tier 6 to decorate an answer tier 2 already made.
 
@@ -73,7 +73,7 @@ Not read: <the configured source that was missing or unreachable, or omit>
 
 ## 6. Log, then close
 
-Compose the answer first, then append one record per invocation to `ask_log` in the schema of `references/log-schema.md`. Strip customer names and personal data from `question_raw` at write time; an account goes in as its tenant id.
+Compose the answer first, then append one record per invocation to `ask_log` in the schema of `references/log-schema.md`. Strip customer names and personal data from `question_raw` at write time; an account goes in as its account id.
 
 Two fields are read, never written from memory or copied from the schema's example. `ts` comes from the clock at write time, `date -u +%Y-%m-%dT%H:%M:%SZ`, so two records on one day can be ordered. `skill_version` is the `version` in `${CLAUDE_SKILL_DIR}/../../.claude-plugin/plugin.json`; if that file is not there, as in a source copy outside the plugin, write `unversioned` rather than guess.
 

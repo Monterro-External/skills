@@ -23,7 +23,7 @@ Transcripts are not input. If a transcript in the round's `transcripts/` has `wr
 3. Every note in scope, fully.
 4. The existing reports in the synthesis folder, for format, and so the report says what is new against them rather than repeating them.
 
-Nothing else. Not the signals folders, not tickets, not the OST. Those are combined with this report later, by other skills and by people.
+Nothing else. Not the signal channels, not tickets, not the OST. Those are combined with this report later, by other skills and by people.
 
 ## 3. Extract, one claim per row
 
@@ -33,13 +33,13 @@ Do not cluster while extracting. The table is the evidence the report cites.
 
 ## 4. Cluster
 
-A **theme** needs at least two participants from different tenants, or from different roles at the same tenant, saying the same thing about the same part of the product. Two quotes from one person are one voice.
+A **theme** needs at least two participants from different customer accounts, or from different roles at the same account, saying the same thing about the same part of the product. Two quotes from one person are one voice.
 
 For each theme, separate:
 
 - what people **do** (observed, or a described routine) from what they **say they want**. Behaviour outranks opinion.
 - what the round **asked about** from what came up **unprompted**. A round about payments will hear about payments; the unprompted mentions are the ones to weigh.
-- **capability** ("we cannot do X at the desk") from **credibility** ("it makes us look old"), when both appear. They are different problems.
+- **capability** ("we cannot do X without it") from **credibility** ("it makes us look old"), when both appear. They are different problems.
 
 Everything that is one voice goes to **Heard once**, with the quote, never promoted to a theme and never dropped.
 

@@ -11,7 +11,7 @@ The readiness gate. It is the only thing allowed to move a ticket from `discover
 Two rules:
 
 - **Every finding names a check.** A bounce is a list of failing checks from `references/checks.md`, each with the smallest fix. Never a bare status change, never "needs work".
-- **The ticket is the record.** The verdict goes onto the ticket as a comment. A verdict that lives only in chat has not happened.
+- **The verdict goes in the conversation.** Never comment on the ticket. The state and the `needs-more-info` label are the only things this skill changes on it.
 
 ## 1. Load the yardsticks
 
@@ -19,9 +19,9 @@ Paths come from `.claude/monterro.json`: the ticket home from `ticket_home` (the
 
 The yardsticks, in this order:
 
-- `product-ticket-standard.md`: the standard. Section 7 is the checklist; `references/checks.md` restates it as pass/fail rules and is the fallback if the standard is not found.
+- The ticket standard: `references/checks.md`, the bundled pass/fail rules. When `standard` in the config names a company's own ticket standard, its readiness checklist wins where the two disagree. No `standard` key is the normal case and is never reported.
 - `context_file`: capabilities, principles, non-goals, product areas.
-- `decisions`: the decision log. Absent is fine and is reported as "no decision log".
+- `decisions`: the folder of Product Decision Records (PDRs). Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending. Absent is fine and is reported as "no PDRs".
 - The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. It is the only vocabulary source; nothing in the product repo stands in for it.
 
 Then fetch the ticket through the tracker MCP by ID or link, or take pasted content. One ticket per run.
@@ -32,7 +32,7 @@ Walk `references/checks.md` top to bottom and record pass, fail or skipped for e
 
 For an S, only checks 1, 2, 5, 7, 10, 11 and 12 apply. The rest are marked not-applicable.
 
-Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a decision-log entry in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes.
+Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a decision-record entry in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes.
 
 ## 3. Verdict
 
@@ -49,7 +49,7 @@ Grill: <ticket id> <title>, tier <S/M/L>
 Verdict: ready-for-handover | needs-more-info (stays in discovery)
 Failing: <check number and name: what fails, smallest fix>  (one line each, or "none")
 Skipped: <check number: why>  (or "none")
-Notes: <where CONTEXT.md, the decision log or the glossary were silent, one line each>  (or "none")
+Notes: <where CONTEXT.md, the decision records or the glossary were silent, one line each>  (or "none")
 ```
 
-Post it as a comment addressed to the ticket owner. If the tracker is read-only, deliver it in the conversation and say it was not written to the ticket.
+Print it in the conversation, addressed to the ticket owner. Never post it as a ticket comment.

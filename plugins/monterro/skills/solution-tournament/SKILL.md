@@ -14,7 +14,7 @@ One epistemic rule governs everything: **the judges judge against the ticket's e
 
 Paths come from `.claude/monterro.json`: the ticket home from `ticket_home` (the tracker team in `tracker`, or `tickets_dir` when it is files), product areas, principles and non-goals from `context_file`, the engineering glossary from `glossary`. If the config is missing, say so in one sentence and stop.
 
-Fetch the ticket from the ticket home by ID or link, else ask for pasted content, and read the standard and `context_file` where present. Then check for the three signals a tournament needs:
+Fetch the ticket from the ticket home by ID or link, else ask for pasted content, and read `context_file`, plus the ticket standard named by `standard` in the config when there is one. Then check for the three signals a tournament needs:
 
 1. **A judgeable problem**: the problem statement is specific enough that two ideas could differ in how well they solve it, and at least one piece of evidence is linked (or the original verbatim signal plus a PM-confirmed problem statement exists).
 2. **A judgeable outcome**: an outcome metric or measurable success criteria, hypotheses are fine, "make it better" is not.

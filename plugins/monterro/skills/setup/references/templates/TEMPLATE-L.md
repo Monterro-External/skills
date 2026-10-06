@@ -52,6 +52,8 @@ _The pain in the customer's words, who has it (segment, persona), how they cope 
 |---|---|---|---|
 | PD-1 | | | |
 
+_A decision that binds beyond this ticket lives as a PDR file in the decisions folder; its row reads `See PDR-nnnn` in the Decision column and leaves the rest empty._
+
 _Prompts: permissions · plan gating · existing customer data · retention · audit logging · localisation · what the customer is told when it fails · analytics events._
 
 ## Migration and rollback intent

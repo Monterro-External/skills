@@ -30,7 +30,7 @@ Never open another transcript or a note from the same round.
 Go through the transcript once and mark, with timestamps:
 
 - every answer to a guide question, and which question it answers
-- every moment the participant shows something rather than tells it (reads a message aloud, opens a screen, a colleague or member interrupts and the exchange is caught)
+- every moment the participant shows something rather than tells it (reads a message aloud, opens a screen, a colleague or end user interrupts and the exchange is caught)
 - every aside, tangent and half-answer that is about the product, however small. The note-taker's classic mistake is to keep only what answers the guide
 - every number: prices, counts, dates, how often, how long
 - the answer to the closing "what would you want" question, kept separate because the guide weights it lightly
@@ -45,7 +45,7 @@ Body, in the exemplar's order and register:
 
 - **Heading and opening paragraph.** Who they are in two or three sentences: tenure, size, role, how they pay or what they run. Facts from the transcript only.
 - **Context.** Where, how long, what was on screen, interruptions, who else was present, anything about the setting that affects how much weight the answers carry.
-- **What we heard.** Grouped under short lead-ins ("On the payment run:", "On receipts:") in the order the guide asks, then the things that came up unprompted. Each quote is a blockquote, translated, followed by the timestamp in square brackets and, when the conversation was not in English, by `[Original: "..."]` with the exact words from the transcript. Every quote carries its original; that is what makes the translation checkable. A paragraph beginning **Observed.** records what you saw happen, and only that. Everything else is reported.
+- **What we heard.** Grouped under short lead-ins named after the guide's topics ("On onboarding:", "On reporting:") in the order the guide asks, then the things that came up unprompted. Each quote is a blockquote, translated, followed by the timestamp in square brackets and, when the conversation was not in English, by `[Original: "..."]` with the exact words from the transcript. Every quote carries its original; that is what makes the translation checkable. A paragraph beginning **Observed.** records what you saw happen, and only that. Everything else is reported.
 - **Surprises.** What you did not expect, including the asides from step 3. Three to five bullets. An aside the participant did not think was worth mentioning belongs here if it is about the product.
 - **Implications.** What this one conversation suggests for the product, hedged as one conversation. Two to four bullets. No solutions unless the participant proposed one, in which case it is theirs, attributed, and last.
 - **Follow-ups.** What to check, who to ask, what data to pull. Never a ticket.

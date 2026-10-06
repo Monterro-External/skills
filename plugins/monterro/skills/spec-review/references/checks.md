@@ -29,7 +29,7 @@ Where this file and the standard disagree, the standard wins and this file is wr
 | # | Check | Passes when | Applies |
 |---|---|---|---|
 | 9 | A named proof | Every requirement has a test in the suite, or the Spec's section 10 verification step, that the reviewer can point at by file and name | S M L |
-| 10 | The right condition | The proof exercises the requirement's own trigger or state, the `WHEN`, `WHILE` or `IF` clause, and not a neighbour of it. A requirement about the default tested only against an explicit value fails. So does one about a member's view tested through an admin, or one about a failure tested only on the success path | S M L |
+| 10 | The right condition | The proof exercises the requirement's own trigger or state, the `WHEN`, `WHILE` or `IF` clause, and not a neighbour of it. A requirement about the default tested only against an explicit value fails. So does one about an end user's view tested through an admin, or one about a failure tested only on the success path | S M L |
 | 11 | Fails without the change | Each proof of new or corrected behaviour, run from head against the base commit's code, fails. One that passes there proves nothing about this change. Exempt: a `SHALL CONTINUE TO` proof, which should pass on both, and fails check 10 instead if it never touches the condition | S M L |
 | 12 | Green at head | The full suite, lint and typecheck pass at head. Name the commands run | S M L |
 | 13 | No quiet weakening | Every assertion the diff deletes, loosens, or rewrites onto a different condition is listed and traced to a requirement that changed it. An untraced one fails, even with the suite green: it is how a regression ships with its test rewritten to agree | S M L |

@@ -8,7 +8,7 @@ description: Read a period of sales calls and lost-deal debriefs and write the s
 
 A period of calls and debriefs goes in, one report comes out, with the table it was built from beside it. Sales calls are the only source that hears from the market rather than from our own book, so a theme that appears here and nowhere else is early information rather than noise. It creates nothing in the tracker.
 
-Paths come from `.claude/monterro.json`: the signal root from `signals` (default `signals`), with `sales/transcripts/` and `sales/lost-deals/` under it; ICP, segments and non-goals from `context_file`; the decision log from `decisions` (default `roadmap/decisions.md`); reports into `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: call transcripts and lost-deal debriefs from the folder named by `channels.sales` (null when the company has no such channel; then say so and stop), in whatever subfolders and formats it holds; ICP, segments and non-goals from `context_file`; the decision records from `decisions` (default `strategy/decisions`); reports into `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop.
 
 Transcripts are short and few. Read every one whole; the deciding question is usually in the last third and a skim of the opening misses it.
 
@@ -19,7 +19,7 @@ The period is what the person named, or else everything after the last sales rep
 ## 2. Read
 
 1. `context_file`: the segment table, the ICP, the competitors and the non-goals. These decide which losses were correct.
-2. The decision log, for asks already decided or deferred.
+2. The decision records, for asks already decided or deferred. Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending.
 3. The existing reports in the synthesis folder, for format and so the report says what is new against them.
 4. Every transcript and every debrief in the period, fully.
 
@@ -27,7 +27,7 @@ Nothing else. Not the CSM notes, not the support queue, not the request channel.
 
 ## 3. The table, one row per moment
 
-Write `<produced date>-sales-calls-<period slug>.table.md` in the synthesis folder. One row per **moment**, a place in a call or a debrief where the prospect raises, asks or decides something: file; date; call `type`; prospect; country; sites and members from the frontmatter; **segment**, read off the CONTEXT.md table from sites and members; **in ICP** yes or no, with the ICP line that decides it; outcome; timestamp; **who raised it**, prospect unprompted, prospect answering a question, or the rep; **position**, first, middle or last third of the call by duration; **the moment** in one line in your own words, what they need to be able to do or what decided them, never the feature name; **kind**: `deciding` (the prospect says or the debrief says it decided the deal), `ask`, `objection`, `praise`, `other`; the quote; theme, blank for now.
+Write `<produced date>-sales-calls-<period slug>.table.md` in the synthesis folder. One row per **moment**, a place in a call or a debrief where the prospect raises, asks or decides something: file; date; call `type`; prospect; country; the size figures the file gives; **segment**, read off the `context_file` segment table from those figures, or `unknown` when it cannot decide; **in ICP** yes or no, with the ICP line that decides it; outcome; timestamp; **who raised it**, prospect unprompted, prospect answering a question, or the rep; **position**, first, middle or last third of the call by duration; **the moment** in one line in your own words, what they need to be able to do or what decided them, never the feature name; **kind**: `deciding` (the prospect says or the debrief says it decided the deal), `ask`, `objection`, `praise`, `other`; the quote; theme, blank for now.
 
 A debrief gives two rows at least: the reason in the customer's words and the reason the rep suspects, marked as such, with the ARR estimate and `lost_to`.
 
@@ -42,12 +42,12 @@ For each theme:
 - **Where it was raised.** Count the rows in the last third and the rows raised unprompted. A theme that lives in the last third and comes unprompted decides deals; a theme the rep raises in the first third is our pitch, and counts for nothing here.
 - **What it cost.** Lost deals citing it, with ARR summed from the debriefs, and whether the debrief's suspected reason agrees with the stated one. **A deal is counted in full against one theme only**, the one its debrief says decided it; every other theme that deal touches shows `same deal` instead of the figure, so the ARR column can be added up.
 - **Market or book.** Prospect demos hear from the market; renewals and expansions hear from accounts we already have. Say which the theme comes from. A renewal theme is renewal risk and is handed to `account-synthesis` by name.
-- **Shape.** Where the same words hide different needs, split them and say so: a capability ("we cannot sign someone up at the desk without it") is not a credibility ("it makes us look old"); a Swedish block invoice is not a Finnish employer share. One theme per shape.
+- **Shape.** Where the same words hide different needs, split them and say so: a capability ("we cannot onboard a new user without it") is a different need from credibility ("it makes us look old"), and the same feature name in two markets can carry two different requirements. One theme per shape.
 - **Correct loss.** A theme carried only by prospects outside the ICP, or inside a non-goal, is a loss we chose. It stays in the report under its own heading and never in the ranking.
 
 ## 5. Write the report
 
-File: `<produced date>-sales-calls-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: sales calls and lost deals`, `period`, `calls_read`, `lost_deals`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:sales-synthesis over signals/sales, table in <table file>`.
+File: `<produced date>-sales-calls-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: sales calls and lost deals`, `period`, `calls_read`, `lost_deals`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:sales-synthesis over <the sales folder>, table in <table file>`.
 
 Length: **hard ceiling 1200 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 

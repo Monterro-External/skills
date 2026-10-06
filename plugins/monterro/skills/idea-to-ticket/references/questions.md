@@ -2,12 +2,11 @@
 
 Ask only what the PM has not already said. One question per message, in this order, wait for each answer.
 
-## S (at most four)
+## S (at most three)
 
-1. **Where and when**: which surface, which role or tenant, which conditions. For a missing capability, the steps that end where the user gets stuck.
+1. **Where and when**: which surface, which role or customer account, which conditions. For a missing capability, the steps that end where the user gets stuck.
 2. **Current and expected**: one line each, in the user's terms.
 3. **Acceptance scenarios**: the happy path, the error case, and the one neighbouring behaviour that must keep working (the regression), each as Given / When / Then. Propose all three from context; the PM confirms or corrects.
-4. **Second source**: who else sees this.
 
 ## M and L (at most five, in this priority)
 

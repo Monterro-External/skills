@@ -6,11 +6,11 @@ description: Read a period of CSM notes and escalations and write the account re
 
 # account-synthesis
 
-A period of notes and threads goes in, one report comes out, with the table it was built from beside it. Key accounts are 35% of ARR on ten tenants and they do not file tickets; their pain arrives as a workaround in a CSM note, a line on a renewal sheet, or an email that went past the CSM. Counting mentions under-serves them by design, so this report is written per account. It creates nothing in the tracker.
+A period of notes and threads goes in, one report comes out, with the table it was built from beside it. The largest accounts often file few tickets; their pain arrives as a workaround in a CSM note, a line on a renewal sheet, or an email that went past the CSM. Counting mentions under-serves them by design, so this report is written per account and weighted by ARR. Which accounts are key, each segment's ARR share and how each segment tends to raise problems come from `context_file`; where it is silent, say so and do not assume. It creates nothing in the tracker.
 
-Paths come from `.claude/monterro.json`: the signal root from `signals` (default `signals`), with `csm/` and `escalations/` under it; release notes from `releases` (default `releases/release-notes`); the board from `tracker` or `tickets_dir`; reports into `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: the CSM notes from `channels.csm` and the escalation threads from `channels.escalations`, either of which may be null when the company has no such channel; segments, key accounts and ARR shares from `context_file`; release notes from `releases` (default `releases/release-notes`); the board from `tracker` or `tickets_dir`; reports into `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop.
 
-Notes are written for the writer. `signals/README.md` has the shorthand table; expand every abbreviation and **leave every initial as written unless the note itself names the person**. This holds in the table as much as in the report: a full name that appears nowhere in `csm/` or `escalations/` is a fabrication even when the person is real elsewhere in the corpus, because those folders are the only ones this skill may read. Write "the Tampere manager (JM)", never a name you inferred.
+Notes are written for the writer. If the channel folders or the signals root hold a README or shorthand glossary, use it to expand every abbreviation, and **leave every initial as written unless the note itself names the person**. This holds in the table as much as in the report: a full name that appears nowhere in the CSM or escalation folders is a fabrication even when the person is real elsewhere, because those folders are the only ones this skill may read. Write "the site manager (JM)", never a name you inferred.
 
 ## 1. Scope
 
@@ -18,7 +18,7 @@ The period is what the person named, or else everything after the last account r
 
 ## 2. Read
 
-1. `signals/README.md`, "Reading this well" and the CS shorthand.
+1. Any README or shorthand glossary in the channel folders or the signals root, and `context_file` for segments, key accounts and ARR shares. Name a channel that is not configured or empty.
 2. The existing reports in the synthesis folder, for format and so the report says what is new against them.
 3. Every release note dated inside or up to twelve months before the period, for claims that something was fixed.
 4. Every note in the period, fully, and every escalation thread whose dates touch the period, fully.
@@ -28,7 +28,7 @@ Nothing else. Not the support queue, not the sales folder. A note that says "rai
 
 ## 3. The table, one row per observation
 
-Write `<produced date>-accounts-<period slug>.table.md` in the synthesis folder. One row per bullet or paragraph that says something about the account: file; date; tenant; segment; CSM; note `type`; health band if the note gives one; **who at the account**, as written; **the observation** in one line in your own words, expanded from the shorthand; **kind**: `problem` (something they see happen), `workaround` (a routine they run around the product), `ask`, `renewal` (anything about the renewal, the comparison sheet, or a competitor), `commitment` (an action point or promise from our side), `claim` (a statement about another channel: tickets filed, support answers), `other`; **first raised**, the earliest note where this account said the same thing, blank if this is the first; the quote.
+Write `<produced date>-accounts-<period slug>.table.md` in the synthesis folder. One row per bullet or paragraph that says something about the account: file; date; customer account; segment; CSM; note `type`; health band if the note gives one; **who at the account**, as written; **the observation** in one line in your own words, expanded from the shorthand; **kind**: `problem` (something they see happen), `workaround` (a routine they run around the product), `ask`, `renewal` (anything about the renewal, the comparison sheet, or a competitor), `commitment` (an action point or promise from our side), `claim` (a statement about another channel: tickets filed, support answers), `other`; **first raised**, the earliest note where this account said the same thing, blank if this is the first; the quote.
 
 An escalation thread gives one row per message, kind by the same rule, and its stated numbers copied exactly.
 
@@ -36,7 +36,7 @@ The table is complete when every note and every message has at least one row. Sa
 
 ## 4. Read per account
 
-For every key account, and every account of any segment with an escalation, a red or amber health band, or a `renewal` row, build the account's picture from its rows:
+For every key account named in `context_file`, and every account of any segment with an escalation, a red or amber health band, or a `renewal` row, build the account's picture from its rows:
 
 - **Trajectory.** Health bands by date, and the renewal date or window if any note gives one.
 - **Living with.** Each `problem` and `workaround`, with first and last note, and whether the board has a ticket. A workaround with no ticket is the finding this report exists for: name it as such. Where a release note says the thing was fixed, say whether the account mentioned it afterwards.
@@ -44,11 +44,11 @@ For every key account, and every account of any segment with an escalation, a re
 - **Promised.** Each `commitment` that is a promise to the account, and whether a later note closes it. Open ones are listed by date. A CSM's own routine todo is not a commitment: "AP: f/u next call", "send numbers by Fri" and the like are housekeeping, counted in one line as routine action points and never listed. If the count of open commitments runs past a handful, the filter is wrong.
 - **Escalated.** For a thread: who raised it to whom, the numbers the customer states, the three things they ask, and what our last message committed to.
 
-Then across accounts: a **shared problem** is the same `problem` or `workaround` at two or more accounts. Rank shared problems by the ARR share of the segments carrying them, never by row count. Mid and long-tail notes without any of the triggers above are read in aggregate only.
+Then across accounts: a **shared problem** is the same `problem` or `workaround` at two or more accounts. Rank shared problems by the ARR share of the segments carrying them, never by row count. Notes on other accounts without any of the triggers above are read in aggregate only.
 
 ## 5. Write the report
 
-File: `<produced date>-accounts-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: CSM notes and escalations`, `period`, `notes_read`, `threads_read`, `accounts`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:account-synthesis over signals/csm and signals/escalations, table in <table file>`.
+File: `<produced date>-accounts-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: CSM notes and escalations`, `period`, `notes_read`, `threads_read`, `accounts`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:account-synthesis over <the channel folders read>, table in <table file>`.
 
 Length: **hard ceiling 1400 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. One account section fits on a screen. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 
@@ -60,7 +60,7 @@ Body, in the existing reports' register:
 - **Shared across accounts.** One bullet per shared problem: the accounts, the segments and ARR share, the earliest first-raised date, and whether any of them has a ticket.
 - **Renewal calendar.** Accounts with a renewal in or near the period, what is on their sheet, and the health band at the last note.
 - **Claims to check.** Every `claim` row: the account, what they say happened in another channel, and the `support-dig` hypothesis it becomes.
-- **Mid and long tail in aggregate.** What the untriggered notes say, in three or four lines, with counts.
+- **Other accounts in aggregate.** What the untriggered notes say, in three or four lines, with counts.
 - **What this synthesis cannot tell you.** Accounts with no note in the period, the accounts that left, initials that could not be resolved, and that notes record what the CSM chose to write down.
 - **Method.** Files read, the table file, the triggers, the ranking rule.
 

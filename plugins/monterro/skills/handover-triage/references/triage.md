@@ -33,7 +33,7 @@ Fails when:
   and nobody has looked at it. "Site managers report" is not a measurement of a rate the product
   stores;
 - the evidence is circular: a ticket's own discovery document, or a document that cites the
-  ticket, counted as a second source;
+  ticket, offered as evidence;
 - the outcome cannot be evaluated from anything the ticket names, and the ticket does not say who
   measures the baseline and when.
 

@@ -24,7 +24,7 @@ Walk top to bottom; the diagnosis is the first stage whose exit condition fails.
 
 **Exit condition:** the success criteria are no longer bare hypotheses: each is either validated (with a result linked), being tested (with the test named), or explicitly accepted as a launch hypothesis by the PM (stated in the ticket). The solution question is settled enough for the ticket's ambition: either a validated direction, or a deliberate decision to hand over with open solution space (wayfinder route).
 
-**Build-versus-configure check, part of this stage:** when the parked candidate resembles capability an existing tool, platform feature, or vendor already provides, compare that existing mechanism against the acceptance scenarios before proposing any new validation or ideation. Configuration that satisfies the scenarios ends the ticket's discovery early, and that is a success.
+**Build-versus-configure check, part of this stage:** when the parked candidate resembles capability an existing tool, platform feature, or vendor already provides, compare that existing mechanism against the acceptance scenarios before proposing any new validation or ideation. Compare what it does as documented and as a user sees it, never by reading its code. Configuration that satisfies the scenarios ends the ticket's discovery early, and that is a success.
 
 **Fails →** next action: the minimum sufficient test for this tier and audience. Internal audience: a poll or a corridor test. M-tier customer feature: a handful of ICP interviews (validate-value scaled down). L-tier: the full validate-value machinery.
 
@@ -36,7 +36,7 @@ Walk top to bottom; the diagnosis is the first stage whose exit condition fails.
 
 ## Stage 6: Grilling
 
-**Exit condition:** the readiness gate of the product-ticket-standard (section 7) passes: no implementation detail, measurable success criteria, populated non-goals, error and regression scenarios present, no vague adjectives without numbers, three or fewer open questions, experience precedence declared, tier matches size, consistent with CONTEXT.md.
+**Exit condition:** the readiness checks pass (the grill's `references/checks.md`, or the configured `standard`): no implementation detail, measurable success criteria, populated non-goals, error and regression scenarios present, no vague adjectives without numbers, three or fewer open questions, experience precedence declared, tier matches size, consistent with CONTEXT.md.
 
 **Fails →** next action: run the grilling skill if present, otherwise apply the checklist inline and list each failing check with its smallest fix. CONTEXT.md silences are flagged as documentation gaps, not ticket defects.
 
