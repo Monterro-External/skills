@@ -24,7 +24,7 @@ The yardsticks, in this order:
 - `decisions`: the folder of Product Decision Records (PDRs). Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending. Absent is fine and is reported as "no PDRs".
 - The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. It is the only vocabulary source; nothing in the product repo stands in for it.
 
-Then fetch the ticket through the tracker MCP by ID or link, or take pasted content. One ticket per run.
+Then fetch the ticket through the MCP for `tracker.kind`, never another tracker's, by ID or link, or take pasted content. One ticket per run.
 
 ## 2. Run the checks
 
@@ -39,6 +39,8 @@ Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a dec
 All applicable checks pass: set status `ready-for-handover`, remove the `needs-more-info` label if present, post the verdict block, and say the ticket is now with `/monterro:handover-triage`.
 
 Any check fails or is skipped: leave the status at `discovery`, add the `needs-more-info` label, and post the verdict block. Skipped counts as failing; a gate that passes on an unreadable glossary is not a gate.
+
+Status names come from `tracker.states`. In Jira a status moves by transition: take the transition whose target status has that name, whatever the transition itself is called, and if none leads there from where the ticket is, leave it and say which move to make by hand.
 
 Do not fix the ticket. Draft the fix in the verdict where it is short (a rewritten Intent sentence, an acceptance scenario), and leave the edit to the PM. The gate checks; the author writes.
 

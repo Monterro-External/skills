@@ -8,14 +8,14 @@ description: Sweep the Triage state of the product team and the For triage lines
 
 Two queues go in: the issues someone filed straight into the tracker's Triage state, and the findings the synthesis reports marked for triage. One board comes out, where every problem has exactly one embryo, typed and tiered, in `backlog`, with the customer's words and the evidence links on it. Completeness is enforced at grilling, never here; an embryo with an Intent, a verbatim signal, the fields and the links is finished.
 
-Paths and the tracker come from `.claude/monterro.json`: `tracker` (team, states, labels, the tier label group), or `tickets_dir` when `ticket_home` is files; templates from `templates`; non-goals and product areas from `context_file`; vocabulary from `glossary`; the decision records from `decisions` (default `strategy/decisions`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
+Paths and the tracker come from `.claude/monterro.json`: `tracker` (team or project, states, labels, the tier label group or prefix), or `tickets_dir` when `ticket_home` is files; templates from `templates`; non-goals and product areas from `context_file`; vocabulary from `glossary`; the decision records from `decisions` (default `strategy/decisions`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
 
 ## 1. Read
 
 1. `context_file`: the product-area taxonomy, the non-goals, the segments. Then `glossary` if it resolves; if it does not, say so in the closing note.
 2. The decision records and every release note from the last twelve months. Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending.
 3. The tier templates.
-4. Every issue in the team's `triage` state, fully, with attachments and comments.
+4. Every issue in the team's or project's `triage` state, fully, with attachments and comments. If `tracker.states.triage` is null, the project has no such state: skip this queue and say so in the closing note.
 5. Every report in the synthesis folder: its **For triage** lines and the sections they point at, and the ledger's corroborated rows and observations. Skip a report's did-nothing, one-account, one-voice, heard-once and watching items; those are not triage material and the report said so.
 6. The board: every issue in every state except `done` and `canceled`, by title, description and links. Read-only until step 5.
 

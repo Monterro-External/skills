@@ -19,7 +19,7 @@ If `.claude/monterro.json` already exists, the person is re-running setup to cha
 Use the structured question tool if available. Defaults in brackets.
 
 1. **Ticket home**: ask exactly "Where should product tickets live?" with the options markdown files in this repo, Linear, or Jira [files]
-2. If Linear or Jira: team or project.
+2. If Linear: the team. If Jira: the site and the project key. Then read the project's issue types and statuses through the MCP (the transitions of any issue in it list every status) and propose a mapping from the standard's states to them, by name, for the person to confirm. Statuses the project lacks are mapped to null and named in the close as the thing to add in Jira.
 3. **Ticket templates**: the S, M and L templates every ticket is written in. Default to the `TEMPLATE-*.md` files found in step 1. If none were found, say so and offer: set them up now from the standard templates bundled with this plugin (default), point at existing templates by path, or skip. If the person skips, warn that idea-to-ticket and signal-triage stop until templates exist.
 4. **Tickets folder and id prefix**: [tickets/, two or three capitals from the repo or product name]
 5. **Reference file**: path to the CONTEXT.md every ticket is checked against [strategy/CONTEXT.md]
@@ -68,7 +68,32 @@ Use the structured question tool if available. Defaults in brackets.
 
 A `channels` value of null means the company has no such channel; the skills that read it say so in their report and carry on. `support_cli` is a command prefix such as `npm run support --` when the repo has a query script for the queue; null means the skills read the export files directly. `standard` null means the bundled checks are the standard.
 
-`tracker` when not files: `{ "kind": "linear", "team": "...", "tier_label_group": "tier" }`. Tier is a label inside that group, never the tracker's estimate field, so setup asks nothing about estimates. If an existing config has `tier_field` or `tier_values`, drop them, say tier now lives in labels, and offer to add the tier label to open tickets in the team from their current estimate.
+`tracker` when not files: `{ "kind": "linear", "team": "...", "tier_label_group": "tier" }`. Tier is a label inside that group, never the tracker's estimate field, so setup asks nothing about estimates. For Jira:
+
+```json
+{
+  "kind": "jira",
+  "site": "example.atlassian.net",
+  "project": "KEY",
+  "issue_types": { "bug": "Bug", "feature": "Feature", "initiative": "Epic" },
+  "tier_label_prefix": "tier-",
+  "area": "label",
+  "states": {
+    "triage": "Triage",
+    "backlog": "Backlog",
+    "todo": null,
+    "discovery": "In Discovery",
+    "ready-for-handover": "In Handover",
+    "in-development": "In Development",
+    "done": "Done",
+    "canceled": "Canceled"
+  }
+}
+```
+
+The values are the project's exact names. `area` is `label` (`area-<value>`) unless the project uses components for product areas; team-managed projects have no components. A state mapped to null is one the project lacks: the skills fall back to the closest status and say so. `triage` null stops signal-triage reading a tracker queue; it then works from the synthesis reports alone and says so.
+
+If an existing config has `tier_field` or `tier_values`, drop them, say tier now lives in labels, and offer to add the tier label to open tickets in the team from their current estimate.
 
 ## 4. Scaffold what is missing
 

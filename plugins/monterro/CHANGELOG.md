@@ -2,6 +2,15 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
+## Unreleased
+
+**Re-run setup** for a repo whose tickets live in Jira.
+
+- **Jira as a ticket home.** The tracker mapping covers Jira field by field: issue types, `tier-S/M/L` and `area-<value>` labels, statuses from `tracker.states`, JQL for duplicates and the triage queue. setup reads the project's statuses and proposes the mapping; a state the project lacks is null and named as the thing to add.
+- **Status moves by transition in Jira**, matched on the target status, never the transition's name. The grill and handover-triage say so.
+- **One tracker per session, by config.** The skills use only the connector `tracker.kind` names, so a session with both Linear and Jira connected never finds a same-keyed ticket in the wrong one.
+- **Screenshots are attached by hand in Jira**: the MCP cannot upload files, so the closing note names the attachment.
+
 ## 0.6.0, 2026-10-06
 
 **Re-run setup.** The config gains `channels`, `support_cli` and `standard`; `decisions` is now a folder; tier moves from the tracker's estimate to a label.

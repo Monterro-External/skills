@@ -17,9 +17,9 @@ Four rules:
 
 ## 1. Load
 
-From `.claude/monterro.json`: the tracker block (team, states, labels), or `tickets_dir` when tickets are files; `context_file`; `glossary`. The engineering repo is the repository `glossary` points into; read its `CLAUDE.md` or `AGENTS.md`, `docs/adr/`, and the code. If the config is missing, or the engineering repo is not readable, say so in one sentence and stop: a handover triage that cannot read the code is the grill run twice.
+From `.claude/monterro.json`: the tracker block (team or project, states, labels), or `tickets_dir` when tickets are files; `context_file`; `glossary`. The engineering repo is the repository `glossary` points into; read its `CLAUDE.md` or `AGENTS.md`, `docs/adr/`, and the code. If the config is missing, or the engineering repo is not readable, say so in one sentence and stop: a handover triage that cannot read the code is the grill run twice.
 
-Fetch the ticket through the tracker MCP by id or link, with its comments, or take a file. One ticket per run. If it is not in `ready-for-handover`, say where it is and stop; triage never runs on a ticket the grill has not passed.
+Fetch the ticket through the MCP for `tracker.kind`, never another tracker's, by id or link, with its comments, or take a file. One ticket per run. If it is not in `ready-for-handover`, say where it is and stop; triage never runs on a ticket the grill has not passed.
 
 ## 2. Read it as engineering
 
@@ -37,6 +37,8 @@ On **ok**:
 - **Bounce**: status `discovery`, label `needs-more-info`, and the verdict block as a comment addressed to the ticket owner, carrying `source: handover-triage` and the reason code. The grill removes the label when the ticket passes again.
 
 If the tracker is read-only or the ticket was a file, deliver the block and say it was not written.
+
+Status names come from `tracker.states`. In Jira a status moves by transition: take the transition whose target status has that name, whatever the transition itself is called, and if none leads there from where the ticket is, leave it and say which move to make by hand.
 
 ## 4. Verdict block
 
