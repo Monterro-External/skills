@@ -51,7 +51,7 @@ For every **keep**: create the embryo in the team, in the template for its tier 
 
 For every **merge**: comment on the surviving ticket with the new source and evidence link, mark the Triage issue as duplicate of it. For every **leave**: comment with the evidence link, nothing else. For every **decline**: move the Triage issue to `canceled` with a comment quoting the non-goal, decision or release note; a report finding declined the same way gets a line in the closing note and no ticket. **Then name the twins.** Search the board for tickets in `backlog` or `todo` carrying the same declined problem and list them in the closing note under Declined twins on the board, with their ids and the same quoted line. Do not move them: they may predate the decision or belong to someone. Declining the queue item and leaving four copies in backlog is how a non-goal comes back.
 
-Vocabulary from the glossary: existing terms, never renamed, never defined in the ticket.
+Vocabulary from the glossary: existing terms, never renamed, never defined in the ticket. A domain term from the signal that the glossary lacks stays in the verbatim signal and goes in the closing note as a glossary gap; defining it under Proposed terms is discovery's work, and the grill fails the ticket until it is done.
 
 ## 6. Check
 
@@ -73,4 +73,5 @@ Declined: <source · reason · line quoted>, one line each
 Declined twins on the board: <id · the same problem, left where it is>, one line each
 Re-scoped on merge: <id · what changed · why>, one line each
 Missing before grilling: <per created S, what the source did not give: reproduction, acceptance scenarios>
+Glossary gaps: <id · term the glossary lacks>, one line each, or none
 ```

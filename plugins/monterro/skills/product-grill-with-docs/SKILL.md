@@ -32,7 +32,7 @@ Walk `references/checks.md` top to bottom and record pass, fail or skipped for e
 
 For an S, only checks 1, 2, 5, 7, 10, 11 and 12 apply. The rest are marked not-applicable.
 
-Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a decision-record entry in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes.
+Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a decision-record entry in the ticket's product area, or the glossary's meaning of a term fails. Where those sources are silent on something the ticket asserts, the ticket does not fail; note it in one line under Notes. The one exception is a domain term the glossary lacks: check 12 passes it only when the ticket defines it under Proposed terms, and a defined term still goes under Notes as a glossary gap.
 
 ## 3. Verdict
 
@@ -51,7 +51,7 @@ Grill: <ticket id> <title>, tier <S/M/L>
 Verdict: ready-for-handover | needs-more-info (stays in discovery)
 Failing: <check number and name: what fails, smallest fix>  (one line each, or "none")
 Skipped: <check number: why>  (or "none")
-Notes: <where CONTEXT.md, the decision records or the glossary were silent, one line each>  (or "none")
+Notes: <where CONTEXT.md, the decision records or the glossary were silent, one line each; glossary gaps the ticket defines, for engineering>  (or "none")
 ```
 
 Print it in the conversation, addressed to the ticket owner. Never post it as a ticket comment.

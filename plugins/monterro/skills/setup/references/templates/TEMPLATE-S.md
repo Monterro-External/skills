@@ -43,3 +43,7 @@ error case and the case we would be most upset to see broken.
 - **AS-3 (regression)**: Given ... when ... then ... continues to ...
 
 **Reference:** _optional. Link or attachment showing the chosen design, and its precedence: binding or illustrative. Remove the line if there is none._
+
+## Proposed terms
+
+- _**term**: what it means in this ticket, in one sentence; where a glossary term is close, why it is not that one. Only for domain terms engineering's glossary lacks. Remove the section if there are none._

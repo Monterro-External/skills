@@ -56,3 +56,7 @@ _Prompts: permissions · plan gating · existing customer data · localisation �
 ## Open questions
 
 - _Question._
+
+## Proposed terms
+
+- _**term**: what it means in this ticket, in one sentence; where a glossary term is close, why it is not that one. Only for domain terms engineering's glossary lacks. Remove the section if there are none._

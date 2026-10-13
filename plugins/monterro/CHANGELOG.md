@@ -2,6 +2,14 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
+## 0.9.0, 2026-10-13
+
+Repos set up on an earlier version: add the **Proposed terms** section to the end of each `TEMPLATE-*.md` by hand, or copy it from `setup/references/templates/`.
+
+- **Proposed terms**, an optional last section in every template, per ticket standard v1.14: one bullet per domain term engineering's glossary lacks, with what it means in this ticket.
+- **The grill fails an undefined new term.** Check 12 used to note a term the glossary lacked and pass; it now passes only when the ticket defines the term under Proposed terms, and still notes it as a glossary gap for engineering. A synonym for a glossary term, or a new meaning for one, fails as before.
+- **idea-to-ticket writes the definition** with the PM's meaning, or marks it a guess in the review. **signal-triage lists glossary gaps** in its closing note and leaves the definition to discovery.
+
 ## 0.8.1, 2026-10-13
 
 - **grill-preview judges size.** It groups the question tree into clusters, lists the size signals with evidence (clusters, scenarios that split along them, several surfaces, a second verb in the Intent, a would-be ADR, tier mismatch), and gives a size verdict: right-sized, too big or tier mismatch. A too-big ticket gets a drafted split, one ticket per cluster, whose confidence comes from the structure: high when nothing is shared across the cut, medium when one decision must be settled first, low when no clean cut exists, in which case it names the scope to cut instead. Drafts only; nothing is created.
