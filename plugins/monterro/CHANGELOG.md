@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
+## 0.8.0, 2026-10-13
+
+- **grill-preview**, a new skill. A dry run of the engineering grill on one ticket: it builds the question tree grill-with-docs would walk against the engineering repo, answers each question with the recommended answer, and sorts every question into product, engineering or boundary with the reason. One self-contained HTML report at `grill-preview/<ticket-id>.html` shows the questions, the facts it looked up instead of asking, and what domain-modeling would have written. Nothing is asked and the ticket is not touched. No time estimate, by design.
+
 ## 0.7.0, 2026-10-13
 
 **Re-run setup** for a repo whose tickets live in Jira.

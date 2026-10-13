@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grill preview</title>
+<style>
+:root {
+  --bg: #f7f6f3; --surface: #ffffff; --ink: #1d1d1b; --muted: #6b6a65; --line: #e3e1db;
+  --product: #b4432f; --product-bg: #fbeae6;
+  --eng: #2f6b4f; --eng-bg: #e5f2ea;
+  --boundary: #8a6410; --boundary-bg: #f8efd9;
+  --good: #2f6b4f; --warn: #8a6410; --bad: #b4432f;
+  --accent: #2b4a8c;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161614; --surface: #1f1f1d; --ink: #ecebe6; --muted: #a09e97; --line: #34332f;
+    --product: #f08a74; --product-bg: #3a211b;
+    --eng: #7cc79f; --eng-bg: #1b3027;
+    --boundary: #e2b85a; --boundary-bg: #362b14;
+    --good: #7cc79f; --warn: #e2b85a; --bad: #f08a74; --accent: #8fb0f0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161614; --surface: #1f1f1d; --ink: #ecebe6; --muted: #a09e97; --line: #34332f;
+  --product: #f08a74; --product-bg: #3a211b;
+  --eng: #7cc79f; --eng-bg: #1b3027;
+  --boundary: #e2b85a; --boundary-bg: #362b14;
+  --good: #7cc79f; --warn: #e2b85a; --bad: #f08a74; --accent: #8fb0f0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+a { color: var(--accent); }
+h1 { font-size: 22px; margin: 4px 0 6px; line-height: 1.3; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 36px 0 12px; }
+.eyebrow { color: var(--muted); font-size: 13px; }
+.meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.verdict { margin-top: 20px; padding: 14px 16px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--warn); }
+.verdict.good { border-left-color: var(--good); } .verdict.bad { border-left-color: var(--bad); }
+.verdict strong { display: block; font-size: 16px; }
+.verdict span { color: var(--muted); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 16px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.tile .v { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.tile .l { color: var(--muted); font-size: 12px; }
+.tile.product .v { color: var(--product); } .tile.engineering .v { color: var(--eng); } .tile.boundary .v { color: var(--boundary); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.filters button { font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+details.round { margin-bottom: 14px; }
+details.round > summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
+details.round > summary .muted { font-weight: 400; color: var(--muted); }
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 10px 0; }
+.q-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.q-head .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+.q-head .t { font-weight: 600; flex: 1 1 260px; }
+.badge { font-size: 12px; padding: 2px 9px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+.badge.product { color: var(--product); background: var(--product-bg); }
+.badge.engineering { color: var(--eng); background: var(--eng-bg); }
+.badge.boundary { color: var(--boundary); background: var(--boundary-bg); }
+.conf { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.conf.low { color: var(--bad); }
+.q p { margin: 8px 0 0; }
+.why { margin-top: 10px; padding: 8px 10px; border-radius: 6px; font-size: 14px; }
+.why.product { background: var(--product-bg); } .why.engineering { background: var(--eng-bg); } .why.boundary { background: var(--boundary-bg); }
+.why b { font-weight: 600; }
+.small { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.small code, li code { font-size: 12px; background: var(--bg); padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; }
+ul.plain { padding-left: 18px; margin: 0; } ul.plain li { margin: 6px 0; }
+.empty { color: var(--muted); }
+footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script id="grill-data" type="application/json">__GRILL_PREVIEW_DATA__</script>
+<script>
+(function () {
+  var d = JSON.parse(document.getElementById('grill-data').textContent);
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var code = function (s) { return esc(s).replace(/`([^`]+)`/g, '<code>$1</code>'); };
+  var label = { product: 'Product', engineering: 'Engineering', boundary: 'Boundary' };
+  var qs = d.questions || [];
+  var count = function (b) { return qs.filter(function (q) { return q.bucket === b; }).length; };
+  var rounds = {};
+  qs.forEach(function (q) { (rounds[q.round] = rounds[q.round] || []).push(q); });
+  var roundNums = Object.keys(rounds).map(Number).sort(function (a, b) { return a - b; });
+  document.title = 'Grill preview ' + d.ticket.id;
+
+  var html = '';
+  html += '<div class="eyebrow">Grill preview · simulated, nothing was asked or changed</div>';
+  html += '<h1>' + (d.ticket.url ? '<a href="' + esc(d.ticket.url) + '">' + esc(d.ticket.id) + '</a>' : esc(d.ticket.id)) + ' ' + esc(d.ticket.title) + '</h1>';
+  html += '<div class="meta"><span>Tier ' + esc(d.ticket.tier) + '</span><span>Status: ' + esc(d.ticket.status) + '</span>' +
+    (d.ticket.area ? '<span>' + esc(d.ticket.area) + '</span>' : '') + '<span>Grilled against ' + esc(d.engineering_repo) + '</span><span>' + esc(d.generated) + '</span></div>';
+  html += '<div class="verdict ' + esc(d.verdict.tone) + '"><strong>' + esc(d.verdict.label) + '</strong><span>' + esc(d.verdict.why) + '</span></div>';
+
+  html += '<div class="tiles">' +
+    '<div class="tile product"><div class="v">' + count('product') + '</div><div class="l">Product questions (should be settled)</div></div>' +
+    '<div class="tile boundary"><div class="v">' + count('boundary') + '</div><div class="l">Boundary questions</div></div>' +
+    '<div class="tile engineering"><div class="v">' + count('engineering') + '</div><div class="l">Engineering questions (expected)</div></div>' +
+    '<div class="tile"><div class="v">' + roundNums.length + '</div><div class="l">Rounds to an empty frontier</div></div>' +
+    '<div class="tile"><div class="v">' + qs.filter(function (q) { return q.confidence === 'low'; }).length + '</div><div class="l">Low-confidence answers</div></div>' +
+    '<div class="tile"><div class="v">' + (d.facts || []).length + '</div><div class="l">Facts looked up, not asked</div></div>' +
+    '</div>';
+
+  html += '<h2>Questions the grill would ask</h2>';
+  html += '<div class="filters" role="group" aria-label="Filter by bucket">' +
+    ['all', 'product', 'boundary', 'engineering'].map(function (b, i) {
+      return '<button type="button" data-b="' + b + '" aria-pressed="' + (i === 0) + '">' + (b === 'all' ? 'All (' + qs.length + ')' : label[b] + ' (' + count(b) + ')') + '</button>';
+    }).join('') + '</div>';
+
+  roundNums.forEach(function (r) {
+    var list = rounds[r];
+    var projected = list.some(function (q) { return q.projected; });
+    html += '<details class="round" ' + (projected ? '' : 'open') + '><summary>Round ' + r + ' <span class="muted">· ' + list.length + ' questions' +
+      (projected ? ' · projected from the recommended answers in earlier rounds' : ' · the frontier today') + '</span></summary>';
+    list.forEach(function (q) {
+      html += '<div class="q" data-b="' + esc(q.bucket) + '"><div class="q-head"><span class="n">Q' + esc(q.n) + '</span><span class="t">' + esc(q.title) + '</span>' +
+        '<span class="badge ' + esc(q.bucket) + '">' + esc(label[q.bucket] || q.bucket) + '</span>' +
+        '<span class="conf ' + esc(q.confidence) + '">' + esc(q.confidence) + ' confidence</span></div>' +
+        '<p>' + code(q.question) + '</p>' +
+        '<p><b>Assumed answer:</b> ' + code(q.recommended) + '</p>' +
+        '<div class="why ' + esc(q.bucket) + '"><b>Why ' + esc((label[q.bucket] || q.bucket).toLowerCase()) + ':</b> ' + code(q.bucket_reason) +
+        (q.ticket_section ? '<br><b>Belongs in:</b> ' + code(q.ticket_section) + (q.check ? ' · ' + code(q.check) : '') : '') + '</div>' +
+        '<div class="small">' + ((q.depends_on || []).length ? 'Depends on ' + q.depends_on.map(function (n) { return 'Q' + n; }).join(', ') + ' · ' : '') +
+        'Sources: ' + ((q.sources || []).length ? q.sources.map(code).join(', ') : 'none, a judgement call') + '</div></div>';
+    });
+    html += '</details>';
+  });
+
+  html += '<h2>Facts the grill would look up itself</h2>';
+  html += (d.facts || []).length ? '<ul class="plain">' + d.facts.map(function (f) { return '<li>' + code(f.fact) + ' <span class="small">' + code(f.source) + '</span></li>'; }).join('') + '</ul>' : '<p class="empty">None.</p>';
+
+  var w = d.would_write || {};
+  html += '<h2>What domain-modeling would write</h2>';
+  var ww = (w.adrs || []).map(function (a) { return '<li><b>ADR:</b> ' + code(a.title) + ' <span class="small">' + code(a.why) + '</span></li>'; })
+    .concat((w.glossary || []).map(function (g) { return '<li><b>Glossary:</b> ' + code(g.term) + ' <span class="small">' + code(g.why) + '</span></li>'; }));
+  html += ww.length ? '<ul class="plain">' + ww.join('') + '</ul>' : '<p class="empty">No ADRs and no glossary entries.</p>';
+
+  if ((d.notes || []).length) {
+    html += '<h2>Notes</h2><ul class="plain">' + d.notes.map(function (n) { return '<li>' + code(n) + '</li>'; }).join('') + '</ul>';
+  }
+  html += '<footer>Round 1 is what the grill would ask today. Later rounds assume the recommended answers and will shift when real answers differ. No time estimate is given on purpose.</footer>';
+  document.getElementById('app').innerHTML = html;
+
+  var buttons = document.querySelectorAll('.filters button');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var b = btn.getAttribute('data-b');
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === btn)); });
+      document.querySelectorAll('.q').forEach(function (q) { q.hidden = !(b === 'all' || q.getAttribute('data-b') === b); });
+      document.querySelectorAll('details.round').forEach(function (r) {
+        var any = Array.prototype.some.call(r.querySelectorAll('.q'), function (q) { return !q.hidden; });
+        r.hidden = !any; if (b !== 'all' && any) r.open = true;
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
