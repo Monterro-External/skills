@@ -2,7 +2,7 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
-## Unreleased
+## 0.7.0, 2026-10-13
 
 **Re-run setup** for a repo whose tickets live in Jira.
 
