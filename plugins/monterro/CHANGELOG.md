@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
+## 0.8.1, 2026-10-13
+
+- **grill-preview judges size.** It groups the question tree into clusters, lists the size signals with evidence (clusters, scenarios that split along them, several surfaces, a second verb in the Intent, a would-be ADR, tier mismatch), and gives a size verdict: right-sized, too big or tier mismatch. A too-big ticket gets a drafted split, one ticket per cluster, whose confidence comes from the structure: high when nothing is shared across the cut, medium when one decision must be settled first, low when no clean cut exists, in which case it names the scope to cut instead. Drafts only; nothing is created.
+
 ## 0.8.0, 2026-10-13
 
 - **grill-preview**, a new skill. A dry run of the engineering grill on one ticket: it builds the question tree grill-with-docs would walk against the engineering repo, answers each question with the recommended answer, and sorts every question into product, engineering or boundary with the reason. One self-contained HTML report at `grill-preview/<ticket-id>.html` shows the questions, the facts it looked up instead of asking, and what domain-modeling would have written. Nothing is asked and the ticket is not touched. No time estimate, by design.

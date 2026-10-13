@@ -42,7 +42,32 @@ One rule, applied per question:
 
 Give the one-line reason for the bucket. For a product or boundary question, name the ticket section it belongs in and the check from `product-grill-with-docs/references/checks.md` it bears on, if any. Pick the bucket on the rule, not on who would enjoy answering it.
 
-## 4. Verdict
+## 4. Size
+
+Judge size from the tree, never from the ticket's length.
+
+**Clusters.** Group the questions into clusters: two questions are in the same cluster when one depends on the other or both bear on the same decision. Then assign each acceptance scenario and each decision in the ticket to the clusters it touches. A ticket with one cluster is one piece of work, however many questions it has.
+
+**Signals**, each recorded with its evidence:
+
+- More than one cluster.
+- Acceptance scenarios that split along the clusters, each touching one only.
+- More than one user role or surface affected.
+- A second verb joined by "and" in the Intent (check 1).
+- A would-be ADR from step 2: a hard-to-reverse decision engineering should settle before the build.
+- Tier mismatch: the questions need content the tier's template does not have, such as an S whose questions need Decisions made or Open questions.
+
+**Size verdict**: `right-sized`, `too big` (two or more clusters, or a would-be ADR the ticket depends on), or `tier mismatch` (one cluster, wrong template).
+
+**Split**, only when the verdict is `too big`. Propose one ticket per cluster, each with a draft Intent sentence, the questions, scenarios and decisions it takes, and its tier. The confidence comes from the structure, never from how sure the split feels:
+
+- `high`: the clusters share no question, no scenario and no decision; every one lands on exactly one side of the cut.
+- `medium`: exactly one shared decision crosses the cut. Name it under settle first: answer it on the original ticket, then split.
+- `low`: more than one shared item, or no clean cut. Propose no split; name the scope to cut instead.
+
+Draft the split in the report only. Never create, edit or link tickets. Say nothing about which piece ships first: the structure shows the cut is clean, not which side is worth more.
+
+## 5. Verdict
 
 One line, from the counts:
 
@@ -52,7 +77,7 @@ One line, from the counts:
 
 Add one sentence on what drives it.
 
-## 5. Write the report
+## 6. Write the report
 
 Read `references/report-template.html`, replace the placeholder `__GRILL_PREVIEW_DATA__` with the JSON below, and write it to `grill-preview/<ticket-id>.html` relative to the working directory. Write nothing else.
 
@@ -65,6 +90,19 @@ Read `references/report-template.html`, replace the placeholder `__GRILL_PREVIEW
   "facts": [ { "fact": "", "source": "" } ],
   "would_write": { "adrs": [ { "title": "", "why": "" } ], "glossary": [ { "term": "", "why": "" } ] },
   "notes": [ "" ],
+  "size": {
+    "verdict": "right-sized | too big | tier mismatch",
+    "why": "",
+    "signals": [ { "signal": "", "evidence": "" } ],
+    "clusters": [ { "name": "", "questions": [1], "scenarios": [""], "decisions": [""] } ],
+    "split": {
+      "confidence": "high | medium | low",
+      "why": "",
+      "settle_first": [ "" ],
+      "tickets": [ { "intent": "", "tier": "", "takes": "" } ],
+      "cut_instead": ""
+    }
+  },
   "questions": [
     {
       "n": 1, "round": 1, "projected": false, "depends_on": [],
@@ -78,4 +116,4 @@ Read `references/report-template.html`, replace the placeholder `__GRILL_PREVIEW
 }
 ```
 
-Then say in the conversation, in three lines at most: where the file is, the verdict line, and the counts per bucket.
+Then say in the conversation, in three lines at most: where the file is, the verdict line, the counts per bucket, and the size verdict with the split confidence.
