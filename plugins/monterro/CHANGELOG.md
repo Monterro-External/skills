@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
 
+## 0.9.1, 2026-10-14
+
+- **grill-preview splits vertically only.** A cluster that touches no acceptance scenario is engineering-internal: it is folded into the clusters that depend on it, does not count toward a too-big verdict, and is never proposed as a ticket. Every proposed piece carries at least one acceptance scenario of its own. Folded work shared by several pieces counts as a shared item for the split's confidence.
+
 ## 0.9.0, 2026-10-13
 
 Repos set up on an earlier version: add the **Proposed terms** section to the end of each `TEMPLATE-*.md` by hand, or copy it from `setup/references/templates/`.

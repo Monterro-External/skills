@@ -128,6 +128,10 @@ footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
           ((c.decisions || []).length ? '<br>Decisions: ' + c.decisions.map(code).join('; ') : '') + '</div></div>';
       }).join('') + '</div>';
     }
+    if ((z.folded || []).length) html += '<p><b>Folded, engineering-internal:</b></p><ul class="plain">' + z.folded.map(function (f) {
+      return '<li>' + code(f.name) + ' <span class="small">Questions ' + (f.questions || []).map(function (n) { return 'Q' + n; }).join(', ') +
+        ((f.into || []).length ? ' · serves ' + f.into.map(code).join(', ') : '') + '</span></li>';
+    }).join('') + '</ul>';
     if (sp) {
       html += '<p><b>Split:</b> ' + code(sp.why) + '</p>';
       if ((sp.settle_first || []).filter(Boolean).length) html += '<p><b>Settle first, on this ticket:</b> ' + sp.settle_first.filter(Boolean).map(code).join('; ') + '</p>';

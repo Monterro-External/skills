@@ -48,9 +48,11 @@ Judge size from the tree, never from the ticket's length.
 
 **Clusters.** Group the questions into clusters: two questions are in the same cluster when one depends on the other or both bear on the same decision. Then assign each acceptance scenario and each decision in the ticket to the clusters it touches. A ticket with one cluster is one piece of work, however many questions it has.
 
+**Vertical only.** A cluster that touches no acceptance scenario is horizontal: engineering-internal work with nothing a customer could observe. Fold it into the cluster whose scenarios depend on it, or into every one that does. It never counts as a cluster for the size verdict and is never proposed as a ticket; how engineering cuts its own tickets after the Spec is theirs to decide. Where several scenario clusters depend on the same folded work, that work is a shared item for the split's confidence. In the report it goes under `folded`, naming the clusters it serves, and never under `clusters`, which holds vertical clusters only.
+
 **Signals**, each recorded with its evidence:
 
-- More than one cluster.
+- More than one cluster, counting vertical clusters only.
 - Acceptance scenarios that split along the clusters, each touching one only.
 - More than one user role or surface affected.
 - A second verb joined by "and" in the Intent (check 1).
@@ -59,7 +61,7 @@ Judge size from the tree, never from the ticket's length.
 
 **Size verdict**: `right-sized`, `too big` (two or more clusters, or a would-be ADR the ticket depends on), or `tier mismatch` (one cluster, wrong template).
 
-**Split**, only when the verdict is `too big`. Propose one ticket per cluster, each with a draft Intent sentence, the questions, scenarios and decisions it takes, and its tier. The confidence comes from the structure, never from how sure the split feels:
+**Split**, only when the verdict is `too big`. Propose one ticket per cluster, each a vertical slice with at least one acceptance scenario of its own, a draft Intent sentence, the questions, scenarios and decisions it takes, and its tier. The confidence comes from the structure, never from how sure the split feels:
 
 - `high`: the clusters share no question, no scenario and no decision; every one lands on exactly one side of the cut.
 - `medium`: exactly one shared decision crosses the cut. Name it under settle first: answer it on the original ticket, then split.
@@ -95,6 +97,7 @@ Read `references/report-template.html`, replace the placeholder `__GRILL_PREVIEW
     "why": "",
     "signals": [ { "signal": "", "evidence": "" } ],
     "clusters": [ { "name": "", "questions": [1], "scenarios": [""], "decisions": [""] } ],
+    "folded": [ { "name": "", "questions": [1], "into": [""] } ],
     "split": {
       "confidence": "high | medium | low",
       "why": "",
