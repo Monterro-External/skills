@@ -7,7 +7,7 @@ The product-side skills for the Monterro product development process. This repos
 In Claude Code:
 
 ```
-/plugin marketplace add Monterro-External/monterro-product-process
+/plugin marketplace add Monterro-External/skills
 /plugin install monterro-product-process@monterro-product
 ```
 

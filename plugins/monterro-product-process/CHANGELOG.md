@@ -4,9 +4,9 @@ Newest first. A **Re-run setup** line means repos configured on an earlier versi
 
 ## 0.10.0, 2026-10-23
 
-Reinstall: `/plugin uninstall monterro@monterro-product-process`, then `/plugin marketplace remove monterro-product-process`, `/plugin marketplace add Monterro-External/monterro-product-process` and `/plugin install monterro-product-process@monterro-product`.
+Reinstall: `/plugin uninstall monterro@monterro-product-process`, then `/plugin marketplace remove monterro-product-process`, `/plugin marketplace add Monterro-External/skills` and `/plugin install monterro-product-process@monterro-product`.
 
-- **The plugin is renamed `monterro-product-process`.** Every skill is now invoked as `/monterro-product-process:<skill>`, and the plugin folder is `plugins/monterro-product-process/`. The marketplace is renamed `monterro-product`; its repo stays `Monterro-External/monterro-product-process`. The config file stays `.claude/monterro.json`, so configured repos need no change.
+- **The plugin is renamed `monterro-product-process`.** Every skill is now invoked as `/monterro-product-process:<skill>`, and the plugin folder is `plugins/monterro-product-process/`. The marketplace is renamed `monterro-product`; its repo stays `Monterro-External/skills`. The config file stays `.claude/monterro.json`, so configured repos need no change.
 
 ## 0.9.1, 2026-10-14
 
