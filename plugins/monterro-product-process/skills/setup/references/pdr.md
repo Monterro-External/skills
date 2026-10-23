@@ -14,7 +14,7 @@ Everything else stays a decision in its ticket. A PDR for every row makes an ind
 
 ## Home and numbering
 
-The folder named by `decisions` in `.claude/monterro.json` (default `strategy/decisions`), whatever the ticket home. One file per decision, `PDR-nnnn-slug.md`. Scan the folder for the highest number and add one. Never renumbered, never deleted. Create the folder and its `README.md` index lazily, when the first PDR is written.
+The folder named by `decisions` in `.claude/monterro.json` (default `strategy/decisions`). One file per decision, `PDR-nnnn-slug.md`. Scan the folder for the highest number and add one. Never renumbered, never deleted. Create the folder and its `README.md` index lazily, when the first PDR is written.
 
 `README.md` holds one line per PDR, newest last: `- [PDR-nnnn](PDR-nnnn-slug.md) · <product_area> · <status> · <title>`. Add the line when writing the file.
 

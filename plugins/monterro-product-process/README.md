@@ -6,7 +6,7 @@ Skills graduate into this plugin from `../skills/src/` one at a time, once its e
 
 | Skill | Job |
 |---|---|
-| `/monterro-product-process:setup` | Once per product repo. Asks where tickets live and where the reference files are, writes `.claude/monterro.json`, scaffolds what is missing |
+| `/monterro-product-process:setup` | Once per product repo. Asks which tracker tickets live in and where the reference files are, writes `.claude/monterro.json`, scaffolds what is missing |
 | `/monterro-product-process:idea-to-ticket` | A PM's own idea, observation or defect into a Product Ticket in the right tier's template |
 | `/monterro-product-process:interview-summary` | One raw interview transcript into the research note, written blind to the rest of the round, every quote timestamped |
 | `/monterro-product-process:interview-synthesis` | A round's notes into the synthesis report: themes with two or more independent voices, single voices kept apart, never a ticket |

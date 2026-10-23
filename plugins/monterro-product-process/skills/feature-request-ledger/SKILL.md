@@ -8,7 +8,7 @@ description: Sweep the request channel and update the one living feature-request
 
 The channel export goes in, the ledger comes out updated. The channel is the fastest route from a customer conversation to product and the worst structured: no fields, no dedup, and the same ask from the same market three times in a quarter reads as three asks. The ledger is where those three become one row with a count. It creates nothing in the tracker and posts nothing in the channel.
 
-Paths come from `.claude/monterro.json`: the export folder from `requests` (default `signals/slack`), the ledger into the folder named by `synthesis` (default `discovery/synthesis`) as `feature-request-ledger.md`, non-goals and product areas from `context_file`, the decision records from `decisions` (default `strategy/decisions`), the board from `tracker` or `tickets_dir`. If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: the export folder from `requests` (default `signals/slack`), the ledger into the folder named by `synthesis` (default `discovery/synthesis`) as `feature-request-ledger.md`, non-goals and product areas from `context_file`, the decision records from `decisions` (default `strategy/decisions`), the board from `tracker`. If the config is missing, say so in one sentence and stop.
 
 ## 1. Scope
 

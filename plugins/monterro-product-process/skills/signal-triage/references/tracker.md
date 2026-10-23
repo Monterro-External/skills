@@ -1,4 +1,4 @@
-# Tracker home: where each field goes
+# Tracker fields: where each field goes
 
 The tracker already has properties for most of the standard's fields. Use them. The description carries only the template's sections, plus a short **Fields** block for the two or three values the tracker cannot hold, and only when they have a value.
 

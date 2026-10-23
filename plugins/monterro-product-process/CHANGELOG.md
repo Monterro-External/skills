@@ -2,6 +2,13 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.11.0, 2026-10-23
+
+**Re-run setup.** Setup drops `ticket_home`, `tickets_dir`, `id_prefix` and `validator` from an existing config and points `templates` wherever they live; a repo moving its templates out of `tickets/` updates the three paths.
+
+- **Tickets live only in Linear or Jira.** The markdown-file ticket home is gone: no skill reads, writes, searches or dedups ticket files, and setup no longer offers files as an answer. With no tracker connected, setup stops. When the tracker is unreachable, the reading skills still take pasted content.
+- **Setup scaffolds templates into `templates/`**, without the file-ticket conventions README. The per-ticket validator is gone with the files; idea-to-ticket and signal-triage check the body against their checklist.
+
 ## 0.10.0, 2026-10-23
 
 Reinstall: `/plugin uninstall monterro@monterro-product-process`, then `/plugin marketplace remove monterro-product-process`, `/plugin marketplace add Monterro-External/skills` and `/plugin install monterro-product-process@monterro-product`.

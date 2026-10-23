@@ -1,4 +1,4 @@
-# Self-check before closing (tracker home, where the validator cannot run)
+# Self-check before closing
 
 - Exactly the template's sections for the tier, nothing else.
 - No template placeholder or guidance text left in the body.

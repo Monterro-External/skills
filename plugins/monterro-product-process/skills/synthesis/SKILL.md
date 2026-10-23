@@ -8,7 +8,7 @@ description: Read every synthesis report, the request ledger and the cohorts, an
 
 The reports go in, one more report comes out, into the same folder. Every per-channel report is honest about its own channel and blind to the others; this pass reads across them. It exists for one kind of finding above all: the pattern no channel shows, where end users in one report do something and a cohort in another counts it, and nobody has filed anything. It creates nothing in the tracker.
 
-Paths come from `.claude/monterro.json`: reports and the ledger from `synthesis` (default `discovery/synthesis`), cohort analyses from `cohorts` (default `discovery/usage-cohorts`), principles and non-goals from `context_file`, the decision records from `decisions` (default `strategy/decisions`), the board from `tracker` or `tickets_dir`. If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: reports and the ledger from `synthesis` (default `discovery/synthesis`), cohort analyses from `cohorts` (default `discovery/usage-cohorts`), principles and non-goals from `context_file`, the decision records from `decisions` (default `strategy/decisions`), the board from `tracker`. If the config is missing, say so in one sentence and stop.
 
 Raw signals are not input. If a channel has no report for the period, say so and go on; never open the raw signal folders to fill the gap. The gap is a finding of its own.
 

@@ -8,7 +8,7 @@ description: Sweep the Triage state of the product team and the For triage lines
 
 Two queues go in: the issues someone filed straight into the tracker's Triage state, and the findings the synthesis reports marked for triage. One board comes out, where every problem has exactly one embryo, typed and tiered, in `backlog`, with the customer's words and the evidence links on it. Completeness is enforced at grilling, never here; an embryo with an Intent, a verbatim signal, the fields and the links is finished.
 
-Paths and the tracker come from `.claude/monterro.json`: `tracker` (team or project, states, labels, the tier label group or prefix), or `tickets_dir` when `ticket_home` is files; templates from `templates`; non-goals and product areas from `context_file`; vocabulary from `glossary`; the decision records from `decisions` (default `strategy/decisions`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
+Paths and the tracker come from `.claude/monterro.json`: `tracker` (team or project, states, labels, the tier label group or prefix); templates from `templates`; non-goals and product areas from `context_file`; vocabulary from `glossary`; the decision records from `decisions` (default `strategy/decisions`); release notes from `releases` (default `releases/release-notes`); reports from `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop. Where the product side is several teams, the person names the team; never hard-code it.
 
 ## 1. Read
 

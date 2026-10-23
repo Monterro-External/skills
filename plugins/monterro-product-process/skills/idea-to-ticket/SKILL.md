@@ -8,15 +8,15 @@ description: Turn a PM's own idea, observation or defect report into a Product T
 
 The PM says what they want or what they saw. You size it, ask only what is missing, and write the ticket in the company's template for that tier. Small things stay small: an S ticket can be complete after one or two questions.
 
-The ticket lives in exactly one place, named by `ticket_home` in `.claude/monterro.json`: a markdown file in `tickets_dir`, or an issue in the tracker. The other place does not exist for this skill. When `ticket_home` is a tracker, never list, read, search, dedup against or relate to files in `tickets_dir`; the only files read from that folder are the templates named in `templates`. If the config is missing, say so in one sentence and stop.
+The ticket is an issue in the tracker named by `tracker` in `.claude/monterro.json`, Linear or Jira. Markdown files in the repo are never tickets: never list, read, search, dedup against or relate to them; the only ticket-shaped files read are the templates named in `templates`. If the config is missing, say so in one sentence and stop.
 
 ## 1. Read
 
-The config, then `context_file` (product areas, non-goals, what already ships), the tier templates, and the existing tickets in the ticket home only: the tracker team's issues when `ticket_home` is a tracker, the files in `tickets_dir` when it is files. Never both. If `glossary` resolves, read it; it is the only source of vocabulary. Read nothing else outside this repo, and no source code inside it. A defect is written as what the user sees, current and expected; its technical cause is engineering's to find after handover, and a cause the PM suggests is kept as one non-binding line.
+The config, then `context_file` (product areas, non-goals, what already ships), the tier templates, and the existing tickets in the tracker team or project. If `glossary` resolves, read it; it is the only source of vocabulary. Read nothing else outside this repo, and no source code inside it. A defect is written as what the user sees, current and expected; its technical cause is engineering's to find after handover, and a cause the PM suggests is kept as one non-binding line.
 
 ## 2. Preserve
 
-Keep the PM's words verbatim, with name and date, under **Original signal (verbatim)**. A pasted screenshot is part of the signal: attach it to the tracker issue, or save it as `tickets_dir/attachments/<id>-1.png` for a file ticket, and describe it in one line.
+Keep the PM's words verbatim, with name and date, under **Original signal (verbatim)**. A pasted screenshot is part of the signal: attach it to the tracker issue, and describe it in one line.
 
 ## 3. Size, then type
 
@@ -36,7 +36,7 @@ From `references/questions.md`, only what the PM has not already said, in the fi
 
 ## 5. Dedup
 
-Search the ticket home on the problem, not the feature name (tracker: search title and description across all states except done and cancelled; an empty or near-empty tracker means no matches, never a reason to look at files). Show up to three matches and let the PM choose: merge, relate, or new.
+Search the tracker on the problem, not the feature name: title and description across all states except done and cancelled. An empty or near-empty tracker means no matches, never a reason to look at files. Show up to three matches and let the PM choose: merge, relate, or new.
 
 ## 6. Review with the PM
 
@@ -58,16 +58,14 @@ An M or L at intake is an embryo and should read like one: the decisions section
 
 A decision that meets the bar in `references/pdr.md` is written as a PDR file in the `decisions` folder with status `proposed`, and the ticket's decisions section carries only `See PDR-nnnn: <title>` for it. Decisions below the bar stay written out in the ticket. Writing the PDR happens after the PM's ok in step 6, never before.
 
-**File home**: copy the template, keep every frontmatter field, fill what you know, leave the rest null. Next id in sequence, filename `PREFIX-nnnn-slug.md`.
-
-**Tracker home**: the tracker holds the fields, the description holds the sections. See `references/tracker.md` for the mapping. Never paste frontmatter, a field table, an id, or a "source of truth" line into the description; the tracker's own identifier is the id and the title carries no prefix.
+The tracker holds the fields, the description holds the sections. See `references/tracker.md` for the mapping. Never paste frontmatter, a field table, an id, or a "source of truth" line into the description; the tracker's own identifier is the id and the title carries no prefix.
 
 ## 8. Check and close
 
-File home: run `validator` if configured, fix what fails, run again. Tracker home: check the body against `references/checklist.md` yourself. Then five lines:
+Check the body against `references/checklist.md` yourself. Then five lines:
 
 ```
-Created: <path or issue link>   Type: <t>   Tier: <T>   Status: <s>
+Created: <issue link>   Type: <t>   Tier: <T>   Status: <s>
 Change or problem: <one line>
 Missing before grilling (S) / before the gate (M, L): <the gaps, or "nothing: ready to grill, recommend moving it to discovery">
 Glossary gaps: <terms the glossary lacks or that need a new meaning, or none>

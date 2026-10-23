@@ -16,11 +16,11 @@ Three standing rules shape everything below:
 
 ## 1. Read the context, then the ticket
 
-Paths come from `.claude/monterro.json`: the ticket home from `ticket_home` (the tracker team in `tracker`, or `tickets_dir` when it is files), product areas, principles and non-goals from `context_file`, the engineering glossary from `glossary`. If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: the tracker team or project from `tracker`, product areas, principles and non-goals from `context_file`, the engineering glossary from `glossary`. If the config is missing, say so in one sentence and stop.
 
 The yardstick is the bundled `references/diagnosis-ladder.md`. When `standard` in the config names a company's own ticket standard, its section structure and readiness gate win where they differ. No `standard` key is the normal case and is never reported.
 
-Fetch the ticket through the tracker `tracker.kind` names (Linear or Jira MCP), never the other one, by the ID or link the PM gave. If no tracker is reachable, ask for the ticket content pasted, or accept a file. Work on one ticket per invocation; given several, ask which one, or take the one the PM named first.
+Fetch the ticket through the tracker `tracker.kind` names (Linear or Jira MCP), never the other one, by the ID or link the PM gave. If the tracker is not reachable, ask for the ticket content pasted. Work on one ticket per invocation; given several, ask which one, or take the one the PM named first.
 
 If the ticket does not follow the Product Ticket structure at all (no sections, no fields, freeform text), do not force the ladder onto it. Say so, and offer the restructure as the next action: map what text exists into the standard's sections, mark everything unconfirmed, and show the PM the result for approval before writing it back. A diagnosis pretending a freeform ticket is an embryo produces confident nonsense.
 

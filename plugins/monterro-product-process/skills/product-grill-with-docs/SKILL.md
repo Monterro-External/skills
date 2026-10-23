@@ -15,7 +15,7 @@ Two rules:
 
 ## 1. Load the yardsticks
 
-Paths come from `.claude/monterro.json`: the ticket home from `ticket_home` (the tracker team in `tracker`, or `tickets_dir` when it is files), product areas, principles and non-goals from `context_file`, the engineering glossary from `glossary`. If the config is missing, say so in one sentence and stop.
+Paths come from `.claude/monterro.json`: the tracker team or project from `tracker`, product areas, principles and non-goals from `context_file`, the engineering glossary from `glossary`. If the config is missing, say so in one sentence and stop.
 
 The yardsticks, in this order:
 

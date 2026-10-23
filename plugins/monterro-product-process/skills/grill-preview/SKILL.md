@@ -17,7 +17,7 @@ Three rules:
 
 ## 1. Load
 
-From `.claude/monterro.json`: the tracker block, or `tickets_dir` when tickets are files; `context_file`; `decisions`; `glossary`. The engineering repo is the repository `glossary` points into: read its `CLAUDE.md` or `AGENTS.md`, `docs/adr/`, the glossary, and the code the ticket touches. If the config is missing, say so in one sentence and stop.
+From `.claude/monterro.json`: the tracker block; `context_file`; `decisions`; `glossary`. The engineering repo is the repository `glossary` points into: read its `CLAUDE.md` or `AGENTS.md`, `docs/adr/`, the glossary, and the code the ticket touches. If the config is missing, say so in one sentence and stop.
 
 Fetch the ticket through the read tools of `tracker.kind` only, by ID or link, or take pasted content. One ticket per run.
 
