@@ -8,7 +8,7 @@ In Claude Code:
 
 ```
 /plugin marketplace add Monterro-External/monterro-product-process
-/plugin install monterro-product-process@monterro-product-process
+/plugin install monterro-product-process@monterro-product
 ```
 
 Then, once per product repo:
