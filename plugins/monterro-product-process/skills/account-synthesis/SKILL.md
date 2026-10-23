@@ -48,7 +48,7 @@ Then across accounts: a **shared problem** is the same `problem` or `workaround`
 
 ## 5. Write the report
 
-File: `<produced date>-accounts-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: CSM notes and escalations`, `period`, `notes_read`, `threads_read`, `accounts`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:account-synthesis over <the channel folders read>, table in <table file>`.
+File: `<produced date>-accounts-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: CSM notes and escalations`, `period`, `notes_read`, `threads_read`, `accounts`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:account-synthesis over <the channel folders read>, table in <table file>`.
 
 Length: **hard ceiling 1400 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. One account section fits on a screen. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 

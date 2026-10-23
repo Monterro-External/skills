@@ -48,7 +48,7 @@ Within a theme, separate what the person **saw happen** from what they **ask to 
 
 ## 5. Write the report
 
-File: `<produced date>-feedback-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source:` the channels read, `period`, `items_read` with a count per channel, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:feedback-synthesis over <the channel folders read>, table in <table file>`.
+File: `<produced date>-feedback-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source:` the channels read, `period`, `items_read` with a count per channel, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:feedback-synthesis over <the channel folders read>, table in <table file>`.
 
 Length: **hard ceiling 1200 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 

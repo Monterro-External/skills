@@ -47,7 +47,7 @@ For each theme:
 
 ## 5. Write the report
 
-File: `<produced date>-sales-calls-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: sales calls and lost deals`, `period`, `calls_read`, `lost_deals`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:sales-synthesis over <the sales folder>, table in <table file>`.
+File: `<produced date>-sales-calls-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: sales calls and lost deals`, `period`, `calls_read`, `lost_deals`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:sales-synthesis over <the sales folder>, table in <table file>`.
 
 Length: **hard ceiling 1200 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 

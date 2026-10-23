@@ -45,7 +45,7 @@ Everything that is one voice goes to **Heard once**, with the quote, never promo
 
 ## 5. Write the report
 
-File: `<produced date>-interviews-round-<x>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: interviews, round <x>`, `period`, `interviews_read`, `produced`, `by` (the person who asked for the report, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro:interview-synthesis over the round's notes`.
+File: `<produced date>-interviews-round-<x>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: interviews, round <x>`, `period`, `interviews_read`, `produced`, `by` (the person who asked for the report, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:interview-synthesis over the round's notes`.
 
 Length: **hard ceiling 1200 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. One paragraph and its quotes per theme. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 

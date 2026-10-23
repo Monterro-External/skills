@@ -51,7 +51,7 @@ Then set the row's status, in this order, first match wins:
 
 ## 5. Update the ledger
 
-One file, `feature-request-ledger.md` in the synthesis folder, updated in place. Frontmatter: `type: ledger`, `source: <channel name from the export's heading>`, `covers: <first message date> to <last message date>`, `messages_read: <cumulative>`, `last_sweep: <today>`, `method: /monterro:feature-request-ledger over <export path>`. Create the file with this shape on the first run; on every later run edit rows and keep the shape.
+One file, `feature-request-ledger.md` in the synthesis folder, updated in place. Frontmatter: `type: ledger`, `source: <channel name from the export's heading>`, `covers: <first message date> to <last message date>`, `messages_read: <cumulative>`, `last_sweep: <today>`, `method: /monterro-product-process:feature-request-ledger over <export path>`. Create the file with this shape on the first run; on every later run edit rows and keep the shape.
 
 Sections, in this order:
 

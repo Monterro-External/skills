@@ -1,6 +1,12 @@
 # Changelog
 
-Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro:setup` again.
+Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
+
+## 0.10.0, 2026-10-23
+
+Reinstall: `/plugin uninstall monterro@monterro-product-process`, then `/plugin install monterro-product-process@monterro-product-process`.
+
+- **The plugin is renamed `monterro-product-process`.** Every skill is now invoked as `/monterro-product-process:<skill>`, and the plugin folder is `plugins/monterro-product-process/`. The config file stays `.claude/monterro.json`, so configured repos need no change.
 
 ## 0.9.1, 2026-10-14
 

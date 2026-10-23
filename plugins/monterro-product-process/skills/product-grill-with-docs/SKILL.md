@@ -36,7 +36,7 @@ Checks 11 and 12 read outside the ticket. A contradiction with CONTEXT.md, a dec
 
 ## 3. Verdict
 
-All applicable checks pass: set status `ready-for-handover`, remove the `needs-more-info` label if present, post the verdict block, and say the ticket is now with `/monterro:handover-triage`.
+All applicable checks pass: set status `ready-for-handover`, remove the `needs-more-info` label if present, post the verdict block, and say the ticket is now with `/monterro-product-process:handover-triage`.
 
 Any check fails or is skipped: leave the status at `discovery`, add the `needs-more-info` label, and post the verdict block. Skipped counts as failing; a gate that passes on an unreadable glossary is not a gate.
 
