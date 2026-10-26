@@ -1,6 +1,6 @@
 {
   "name": "monterro-product-process",
   "description": "Monterro product-side workflow: from a PM's idea or a queue of signals to a Product Ticket that engineering can pick up with grill-with-docs or wayfinder.",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "author": { "name": "Monterro" }
 }

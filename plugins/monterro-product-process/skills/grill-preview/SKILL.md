@@ -1,7 +1,7 @@
 ---
 name: grill-preview
 disable-model-invocation: true
-description: Dry-run the engineering grill on one ticket without asking anything or touching the ticket. Projects the question tree grill-with-docs would walk, sorts every question into product, engineering or boundary, and writes one self-contained HTML report. Use before the readiness gate or before handover to see whether the grill will take minutes or hours.
+description: Dry-run the engineering grill on one ticket without asking anything or touching the ticket. Projects the question tree grill-with-docs would walk, sorts every question into product, engineering or boundary, and writes one self-contained HTML report. Use right after intake to check the ticket's tier and size against the code, and again before the readiness gate or handover to see whether the grill will take minutes or hours.
 allowed-tools: Read, Grep, Glob, Write(grill-preview/**)
 ---
 

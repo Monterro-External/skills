@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.11.3, 2026-10-26
+
+- **grill-preview is also the intake size check.** Run it on a new ticket to see, from the code, whether the tier is right and whether the ticket is too big. The report sizes and buckets questions; nothing technical goes on the ticket. Only the description changed.
+
 ## 0.11.2, 2026-10-26
 
 - **The grill reminds about proposed PDRs.** A PDR the ticket points to that is still `proposed` is listed under Notes as "accept before handover", with its owner. Nothing in the flow sets `accepted`, and a proposed PDR binds nothing. It never fails the ticket.
