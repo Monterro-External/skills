@@ -10,7 +10,7 @@ A period of the queue goes in, one report comes out, with the table it was built
 
 Paths come from `.claude/monterro.json`: the queue from `support` (default `signals/support`), release notes from `releases` (default `releases/release-notes`), segments and the account list from `context_file`, reports into `synthesis` (default `discovery/synthesis`). If the config is missing, say so in one sentence and stop.
 
-**Reading the queue.** By default, read the export files in the `support` folder directly: JSONL, CSV, or one file per ticket. A large export is read in chunks, in order, until every ticket has been seen. When `support_cli` is set (for example `npm run support --`), use its commands instead (`list`, `show`, `tenants`, `months`, `ids`, and whatever filters it documents). Every count in the report comes from the table you build in step 3, never from a tag.
+**Reading the queue.** By default, read the export files in the `support` folder directly: JSONL, CSV, or one file per ticket. A queue too large to hold at once is read in batches (step 3). When `support_cli` is set (for example `npm run support --`), use its commands instead (`list`, `show`, `tenants`, `months`, `ids`, and whatever filters it documents). Every count in the report comes from the table you build in step 3, never from a tag.
 
 ## 1. Scope
 
@@ -27,11 +27,13 @@ Nothing else. Not the OST, not the tickets folder, not the other signal folders.
 
 ## 3. The table, one row per ticket
 
-Read every ticket in the period (`list` with a CLI) before writing a row. Then write `<produced date>-support-tickets-<period slug>.table.md` in the synthesis folder, a markdown table with one row per ticket: id; account; segment; role; language; month; **intent** in your own words, one line, what the customer was trying to do or what they saw happen, taken from the subject and first sentence and never from the tag; **kind**: `how-to`, `defect`, `request`, `rules` (asking us to confirm how the product behaves), `other`; **theme**: blank for now.
+Read every ticket in the period (`list` with a CLI); the table is built from reading, never from a sample or a pattern match. Write `<produced date>-support-tickets-<period slug>.table.md` in the synthesis folder, a markdown table with one row per ticket: id; account; segment; role; language; month; **intent** in your own words, one line, what the customer was trying to do or what they saw happen, taken from the subject and first sentence and never from the tag; **kind**: `how-to`, `defect`, `request`, `rules` (asking us to confirm how the product behaves), `other`; **theme**: blank for now.
 
 Where the first sentence leaves the intent unclear, read the whole ticket (`show` with a CLI). Do that for every ticket whose intent you cannot state in one line, and for every ticket with three or more messages, because a long thread is the queue's expensive tail and the shape of the problem is in the replies.
 
-The table is complete when its row count equals the number of tickets in the period. Say both numbers.
+**Batches.** When the period will not fit in one reading, split it into batches of one month each, and halve any month that still does not fit. Where the environment offers subagents, give each batch to its own subagent with the month's ticket ids (or the CLI command that lists them), the README's rules, and this step's column definitions and whole-ticket rule. Each one reads every ticket in its batch and returns its rows and its ticket count: no themes, no clustering, no quotes chosen. Without subagents, run the batches one after another and append each batch's rows to the table file before starting the next, so no batch needs the previous one in view. A batch whose row count falls short of its ticket count is run again before step 4. Intents written in different batches will be worded differently; step 4 clusters on meaning, not wording.
+
+The table is complete when its row count equals the number of tickets in the period. Say both numbers, and the batches when there were any.
 
 ## 4. Cluster
 
@@ -61,7 +63,7 @@ Body, in the existing reports' register:
 - **One account.** One bullet per single-account cluster: account, tickets, the intent, the strongest quote and id. Say which the next period should watch.
 - **Already fixed.** Themes that stopped at a release, with the release date, and any tickets after it.
 - **What this synthesis cannot tell you.** Segments that raise problems outside support, end users who never write to support, and anything a tag count would have said differently. Name what `context_file` was silent on.
-- **Method.** How the queue was read (files or CLI commands), the table file, the rule for a theme.
+- **Method.** How the queue was read (files or CLI commands, and the batches if any), the table file, the rule for a theme.
 
 ## 6. Check
 
