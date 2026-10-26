@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.11.2, 2026-10-26
+
+- **The grill reminds about proposed PDRs.** A PDR the ticket points to that is still `proposed` is listed under Notes as "accept before handover", with its owner. Nothing in the flow sets `accepted`, and a proposed PDR binds nothing. It never fails the ticket.
+
 ## 0.11.1, 2026-10-26
 
 - **support-synthesis reads a large queue in batches.** One month per batch, halved when a month will not fit, each read in full by its own subagent (or in sequence, appending to the table) and returning rows only. A short batch is rerun before clustering. A timed run on a 454-ticket queue had fallen back to classifying most tickets by pattern match, which the skill forbids.

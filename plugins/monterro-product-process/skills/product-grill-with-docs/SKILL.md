@@ -21,7 +21,7 @@ The yardsticks, in this order:
 
 - The ticket standard: `references/checks.md`, the bundled pass/fail rules. When `standard` in the config names a company's own ticket standard, its readiness checklist wins where the two disagree. No `standard` key is the normal case and is never reported.
 - `context_file`: capabilities, principles, non-goals, product areas.
-- `decisions`: the folder of Product Decision Records (PDRs). Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending. Absent is fine and is reported as "no PDRs".
+- `decisions`: the folder of Product Decision Records (PDRs). Read its `README.md` index, then the PDRs in the product areas at hand; only `accepted` PDRs decide anything, a `proposed` one is reported as pending. Absent is fine and is reported as "no PDRs". A PDR the ticket itself points to (`See PDR-nnnn`) that is still `proposed` goes under Notes as "accept before handover", with its owner: the decision binds nothing until a human accepts it. It is a reminder, never a failing check.
 - The engineering glossary. If unreachable, check 12 is skipped and skipped counts as failing. It is the only vocabulary source; nothing in the product repo stands in for it.
 
 Then fetch the ticket through the MCP for `tracker.kind`, never another tracker's, by ID or link, or take pasted content. One ticket per run.
@@ -51,7 +51,7 @@ Grill: <ticket id> <title>, tier <S/M/L>
 Verdict: ready-for-handover | needs-more-info (stays in discovery)
 Failing: <check number and name: what fails, smallest fix>  (one line each, or "none")
 Skipped: <check number: why>  (or "none")
-Notes: <where CONTEXT.md, the decision records or the glossary were silent, one line each; glossary gaps the ticket defines, for engineering>  (or "none")
+Notes: <where CONTEXT.md, the decision records or the glossary were silent, one line each; glossary gaps the ticket defines, for engineering; PDRs the ticket points to that are still proposed: "PDR-nnnn: accept before handover, owner <name>">  (or "none")
 ```
 
 Print it in the conversation, addressed to the ticket owner. Never post it as a ticket comment.
