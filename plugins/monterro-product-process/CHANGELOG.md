@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.11.4, 2026-11-04
+
+- **support-synthesis batches run on Haiku.** Each batch subagent is started on the Haiku model instead of inheriting the session model. The batch job reads and tags one ticket at a time; clustering and the report stay on the session model. Not yet evaluated.
+
 ## 0.11.3, 2026-10-26
 
 - **grill-preview is also the intake size check.** Run it on a new ticket to see, from the code, whether the tier is right and whether the ticket is too big. The report sizes and buckets questions; nothing technical goes on the ticket. Only the description changed.
