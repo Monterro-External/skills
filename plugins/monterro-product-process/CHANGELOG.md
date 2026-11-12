@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.12.0, 2026-11-12
+
+- **brainstorm-ideas, solution-tournament, handover-triage and spec-review removed.** Handover is now an engineer's step: they read the ticket at `ready-for-handover`, pick the grilling or wayfinder route and move it to `in-development`, or send it back to `discovery` with `needs-more-info` and a reason code (product ticket standard v1.15). The grill's closing line now hands the ticket to engineering instead of pointing at handover-triage. The engineering side is Matt Pocock's published skills with nothing of ours wrapped around them. Reinstall or update the plugin; nothing to re-run in setup.
+
 ## 0.11.4, 2026-11-04
 
 - **support-synthesis batches run on Haiku.** Each batch subagent is started on the Haiku model instead of inheriting the session model. The batch job reads and tags one ticket at a time; clustering and the report stay on the session model. Not yet evaluated.
