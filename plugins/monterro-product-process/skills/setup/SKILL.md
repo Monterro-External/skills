@@ -28,6 +28,7 @@ Use the structured question tool if available. Defaults in brackets.
 8. **Decision records**: the folder for Product Decision Records, product decisions that bind beyond one ticket, one file each [strategy/decisions]
 9. **Optional, for ask-product**: where the user documentation lives, and where the question log goes [none, signals/ask-log.jsonl]
 10. **Optional, own ticket standard**: path to the company's own product ticket standard, if it has one. The skills carry the Monterro standard's checks and use them when this is none [none]
+11. **Optional, for prototype-ticket**: the link to the Claude Design System artifact prototypes are built from, and the engineering checkout whose screens they start from, relative to this repo. If the company has no design system artifact yet, say how to make one: open Claude Code in the engineering checkout and run `/design-sync`, which publishes one from the code's tokens and components; then run setup again with its link [none, the repo `glossary` points into]
 
 ## 3. Write the config
 
@@ -56,11 +57,14 @@ Use the structured question tool if available. Defaults in brackets.
   "decisions": "strategy/decisions",
   "releases": "releases/release-notes",
   "docs": null,
-  "ask_log": "signals/ask-log.jsonl"
+  "ask_log": "signals/ask-log.jsonl",
+  "design_system": { "artifact": null, "code": "../<engineering-repo>" }
 }
 ```
 
 A `channels` value of null means the company has no such channel; the skills that read it say so in their report and carry on. `support_cli` is a command prefix such as `npm run support --` when the repo has a query script for the queue; null means the skills read the export files directly. `standard` null means the bundled checks are the standard.
+
+`design_system.artifact` null means prototype-ticket stops and says to run `/design-sync` first. A system made by `/design-sync` is read-only on its page and follows the code: a token or component changes in the code, then `/design-sync` runs again. Nobody edits the page.
 
 `tracker` for Linear is the shape above. Tier is a label inside that group, never the tracker's estimate field, so setup asks nothing about estimates. For Jira:
 

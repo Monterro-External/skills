@@ -2,6 +2,13 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.13.0, 2026-11-13
+
+**Re-run setup** to use prototype-ticket. The new question is optional; every other skill works without it.
+
+- **prototype-ticket, new.** Prototypes one ticket on a Claude Design canvas built from the company's design system: a `Current` artboard from the code and two or three variants from the real components, each with its AS-3 note. Nothing is invented: what the ticket and the code do not say shows as `[OPEN: ...]`, and a component the system lacks as `NEEDS COMPONENT · <slug>`. Rerun with the same ID to iterate; `component <slug>` draws a proposal for the design system's owner, with every state from existing tokens and a proposed prop, and never adds it to the system; `pick <variant>` moves the rest to a Rejected row and, after the PM's yes, writes the reference line to the ticket, `illustrative` unless a user validation is named. It never changes state, labels or comments. Keeps its working notes in `prototypes/<ticket-id>.md`. Run end to end on BCPRO-143.
+- **Setup asks for the design system.** Question 11, optional: the Claude Design System artifact the prototypes are built from and the engineering checkout whose screens they start from, written to `design_system` in `.claude/monterro.json`. A company without one runs `/design-sync` in Claude Code from its engineering repo first; the system then follows the code, so a token or component changes in the code and `/design-sync` runs again.
+
 ## 0.12.0, 2026-11-12
 
 - **brainstorm-ideas, solution-tournament, handover-triage and spec-review removed.** Handover is now an engineer's step: they read the ticket at `ready-for-handover`, pick the grilling or wayfinder route and move it to `in-development`, or send it back to `discovery` with `needs-more-info` and a reason code (product ticket standard v1.15). The grill's closing line now hands the ticket to engineering instead of pointing at handover-triage. The engineering side is Matt Pocock's published skills with nothing of ours wrapped around them. Reinstall or update the plugin; nothing to re-run in setup.
