@@ -42,7 +42,7 @@ error case and the case we would be most upset to see broken.
 - **AS-2 (error case)**: Given ... when ... then ...
 - **AS-3 (regression)**: Given ... when ... then ... continues to ...
 
-**Reference:** _optional. Link or attachment showing the chosen design, and its precedence: binding or illustrative. Remove the line if there is none._
+**Reference:** _optional. Link or attachment showing the chosen design. It is illustrative unless it says binding, with what was validated, with whom and when. Remove the line if there is none._
 
 ## Proposed terms
 

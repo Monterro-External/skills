@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.14.0, 2026-11-13
+
+- **A design reference no longer states its precedence** (product ticket standard v1.16). A reference that says nothing is `illustrative`; only `binding` is written, with what was validated, with whom and when. The grill's check 9 passes a reference with no precedence and still fails an unearned `binding`. The setup templates, and the idea-to-ticket and signal-triage checklists, drop the precedence word. prototype-ticket writes `Design: <canvas link> (Variant <X> · <idea>)` and, when a component is needed, the `Needs component` line, nothing else. Repos that scaffolded templates before this keep their old hint until they copy the new ones; tickets that still say `precedence: illustrative` keep passing.
+
 ## 0.13.1, 2026-11-13
 
 - **prototype-ticket keeps rejected variants off the ticket.** The reference line names the chosen variant only. Why the others lost stays on the canvas, in the Rejected row, where an M ticket's PDR can still find the alternative. Nothing to re-run.

@@ -40,6 +40,6 @@ Then, once per product repo:
 | `/monterro-product-process:advance-ticket`          | Diagnose where a ticket stands and prepare the cheapest next action toward handover                                                                                                                                                                                            |
 | `/monterro-product-process:prototype-ticket` | One ticket on a Claude Design canvas from the real design system: today's screen and two or three variants, iterate, propose a missing component, pick and write the reference line |
 | `/monterro-product-process:grill-preview` | A dry run of the engineering grill: the questions grill-with-docs would ask, each bucketed product, engineering or boundary, in one HTML report. Asks nothing, changes nothing |
-| `/monterro-product-process:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.10                                                                                                                  |
+| `/monterro-product-process:product-grill-with-docs` | The readiness gate: pass a ticket to ready-for-handover, or leave it in discovery with the failing checks named. Grades against product ticket standard v1.16                                                                                                                  |
 
 

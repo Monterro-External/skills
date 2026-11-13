@@ -51,7 +51,7 @@ _Prompts: permissions · plan gating · existing customer data · localisation �
 - **AS-2 (error):** Given _..._, when _..._, then _..._
 - **AS-3 (regression, upset if broken):** _existing behaviour that continues unchanged_
 
-**Reference:** _optional. Link or attachment showing the chosen design, and its precedence: binding or illustrative. Remove the line if there is none._
+**Reference:** _optional. Link or attachment showing the chosen design. It is illustrative unless it says binding, with what was validated, with whom and when. Remove the line if there is none._
 
 ## Open questions
 

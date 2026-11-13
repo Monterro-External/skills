@@ -10,7 +10,7 @@ Turns a ticket with an open interaction choice into something people can look at
 
 Four rules:
 
-- **A candidate, never the spec.** The prototype shows intent. The ticket's prose governs unless a user validation is named, so precedence is `illustrative` by default.
+- **A candidate, never the spec.** The prototype shows intent. The ticket's prose governs unless a user validation is named, so the reference is `illustrative`, which the ticket never needs to say.
 - **Real components only.** Build every screen from the design system's mounted components and tokens. A component the system lacks is drawn as plain markup inside a box labelled `NEEDS COMPONENT · <slug>: <what>`, never styled to look shipped. The slug is short, lower case and names the existing component it extends, if any (`th-sort`, `date-range-picker`); it is how the PM refers to the gap later.
 - **Invent nothing.** Labels, rules, ids, numbers and states come from the ticket, the code or its seed data. Where the ticket is silent, the artboard shows `[OPEN: <question>]`. Every placeholder is listed in the reply.
 - **One ticket's change only.** Each variant changes only what the ticket is about. Anything beyond it (a setting, a second screen, persistence) is listed as parked, not drawn.
@@ -70,8 +70,8 @@ Reply with the canvas link, the states drawn, the proposed prop, and who has to 
 Then write the reference to the ticket. Show the PM the exact text first and write it on a yes:
 
 - S: the `### Reference` section of the description. M: the one `**Reference**` line. L: the Experience reference section.
-- Text: `Design: <canvas link> (Variant <X> · <idea>), precedence: illustrative. Built from <design system name>; layout indicative, build with existing components.` Add `Needs component: <slug> (proposed, see artboard "Proposed component · <slug>"; <status from prototypes/<ticket-id>.md>)` for each one the chosen variant uses; engineering builds it as part of this ticket. A component with no proposal yet is listed as `Needs component: <slug> (not yet proposed)`.
-- `binding` only when the PM names what was validated, with whom and when; write that on the line below.
+- Text: `Design: <canvas link> (Variant <X> · <idea>).` Nothing about precedence, the design system or layout: a reference is `illustrative` unless it says `binding`. Add `Needs component: <slug> (proposed, see artboard "Proposed component · <slug>"; <status from prototypes/<ticket-id>.md>)` for each one the chosen variant uses; engineering builds it as part of this ticket. A component with no proposal yet is listed as `Needs component: <slug> (not yet proposed)`.
+- `binding` only when the PM names what was validated, with whom and when: then add `Binding: <what was validated, with whom, when>.` on the line below.
 
 Update the description through the tracker's update tool, changing only that section. Never change state, labels or comments. Set `status: picked` in `prototypes/<ticket-id>.md`.
 

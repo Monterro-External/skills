@@ -68,7 +68,7 @@ _What existing customers experience during the change, and what they experience 
 
 ## Experience reference
 
-_Link and key flows in prose, with precedence: illustrative / binding / none._
+_Link and key flows in prose. Illustrative unless it says binding (with what was validated, with whom and when), or none when nothing is designed yet._
 
 ## Open questions
 
