@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.13.1, 2026-11-13
+
+- **prototype-ticket keeps rejected variants off the ticket.** The reference line names the chosen variant only. Why the others lost stays on the canvas, in the Rejected row, where an M ticket's PDR can still find the alternative. Nothing to re-run.
+
 ## 0.13.0, 2026-11-13
 
 **Re-run setup** to use prototype-ticket. The new question is optional; every other skill works without it.

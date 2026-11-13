@@ -65,12 +65,12 @@ Reply with the canvas link, the states drawn, the proposed prop, and who has to 
 
 ## 7. Pick
 
-`pick <variant>` settles it. On the canvas, move the other variants into a second row under a `Rejected` title, each with a note on why it lost, in the PM's words when given. Never delete one.
+`pick <variant>` settles it. On the canvas, move the other variants into a second row under a `Rejected` title, each with a note on why it lost, in the PM's words when given. Never delete one. The reasons stay on the canvas: the ticket names the chosen variant only, never the rejected ones or why.
 
 Then write the reference to the ticket. Show the PM the exact text first and write it on a yes:
 
 - S: the `### Reference` section of the description. M: the one `**Reference**` line. L: the Experience reference section.
-- Text: `Design: <canvas link> (Variant <X> · <idea>), precedence: illustrative. Built from <design system name>; layout indicative, build with existing components. Rejected: <variant>, <why>.` Add `Needs component: <slug> (proposed, see artboard "Proposed component · <slug>"; <status from prototypes/<ticket-id>.md>)` for each one the chosen variant uses; engineering builds it as part of this ticket. A component with no proposal yet is listed as `Needs component: <slug> (not yet proposed)`.
+- Text: `Design: <canvas link> (Variant <X> · <idea>), precedence: illustrative. Built from <design system name>; layout indicative, build with existing components.` Add `Needs component: <slug> (proposed, see artboard "Proposed component · <slug>"; <status from prototypes/<ticket-id>.md>)` for each one the chosen variant uses; engineering builds it as part of this ticket. A component with no proposal yet is listed as `Needs component: <slug> (not yet proposed)`.
 - `binding` only when the PM names what was validated, with whom and when; write that on the line below.
 
 Update the description through the tracker's update tool, changing only that section. Never change state, labels or comments. Set `status: picked` in `prototypes/<ticket-id>.md`.
