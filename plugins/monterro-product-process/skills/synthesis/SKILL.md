@@ -47,7 +47,7 @@ Give rows the same **finding** when they describe the same thing happening or wa
 
 File: `<produced date>-cross-source-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: cross-source`, `period`, `reports_read` as a list of files, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:synthesis over discovery/synthesis and discovery/usage-cohorts`.
 
-Length: **hard ceiling 1500 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. This report cites; it does not repeat. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
+Length: **hard ceiling 1800 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. This report cites; it does not repeat. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 
 Body, in the existing reports' register:
 
@@ -64,7 +64,7 @@ Body, in the existing reports' register:
 
 ## 6. Check
 
-- the report body is under 1500 words; state the count
+- the report body is under 1800 words; state the count
 - every finding names two or more channel families, and no two rows from the same family were counted as two
 - every citation points at a heading that exists in the report it names, and every id came from that report
 - every one-family finding is in Seen in one channel, with the silent channels' report status stated

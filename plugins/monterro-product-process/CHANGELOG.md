@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.14.1, 2026-11-17
+
+- **Report ceilings aligned at 1800 words.** feedback-synthesis, sales-synthesis and interview-synthesis go from 1200, account-synthesis from 1400 and synthesis from 1500, matching support-synthesis. The demotion rule over the ceiling is unchanged. Nothing to re-run.
+
 ## 0.14.0, 2026-11-13
 
 - **A design reference no longer states its precedence** (product ticket standard v1.16). A reference that says nothing is `illustrative`; only `binding` is written, with what was validated, with whom and when. The grill's check 9 passes a reference with no precedence and still fails an unearned `binding`. The setup templates, and the idea-to-ticket and signal-triage checklists, drop the precedence word. prototype-ticket writes `Design: <canvas link> (Variant <X> · <idea>)` and, when a component is needed, the `Needs component` line, nothing else. Repos that scaffolded templates before this keep their old hint until they copy the new ones; tickets that still say `precedence: illustrative` keep passing.

@@ -50,7 +50,7 @@ Then across accounts: a **shared problem** is the same `problem` or `workaround`
 
 File: `<produced date>-accounts-<period slug>.md` in the synthesis folder. Frontmatter in the existing reports' shape: `type: synthesis`, `source: CSM notes and escalations`, `period`, `notes_read`, `threads_read`, `accounts`, `produced`, `by` (the person who asked, if they said who they are; otherwise `unattended run`; never an invented name), `method: /monterro-product-process:account-synthesis over <the channel folders read>, table in <table file>`.
 
-Length: **hard ceiling 1400 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. One account section fits on a screen. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
+Length: **hard ceiling 1800 words** for the report body, counting from the first heading and excluding the frontmatter and the table file. One account section fits on a screen. Count the words before saving and say the count in the closing block. Over the ceiling, demote whole items from the bottom of the ranking to one-line bullets; never trim sentences evenly across the report, which loses the evidence and keeps the padding.
 
 Body, in the existing reports' register:
 
@@ -66,7 +66,7 @@ Body, in the existing reports' register:
 
 ## 6. Check
 
-- the report body is under 1400 words; state the count
+- the report body is under 1800 words; state the count
 - every number in the report is a row count from the table or a number the customer stated, quoted
 - every quote is in the file it cites, word for word, before the expansion in brackets
 - every workaround in an account section says ticket or no ticket, and the board was searched for it
