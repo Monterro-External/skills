@@ -32,7 +32,7 @@ If the idea is a stated non-goal in CONTEXT.md, cite it and stop; changing CONTE
 
 ## 4. Ask one question at a time
 
-From `references/questions.md`, only what the PM has not already said, in the file's priority order. One question per message, in chat, plain text: ask it, stop, wait for the answer. Never a numbered list of questions, never two in one message. The answer may settle later questions, so re-check the list before each one. Budget: S at most three questions, M and L at most five. If the PM says "skip" or "enough", stop asking. Unanswered questions become guesses for the review in step 6, never blockers.
+From `references/questions.md`, only what the PM has not already said, in the file's priority order. One question per message, in chat, plain text: ask it, stop, wait for the answer. One question means one sentence ending in the message's only question mark, asking for one thing. Never a numbered list of questions, never two in one message, and never a second question joined on with "and", "or" or "also". A bank entry that names two things is a topic: ask its first part, and infer the rest from the answer and CONTEXT.md as a `guess` for the review in step 6. An example answer is allowed when it helps, at most one, inside the same sentence. The answer may settle later questions, so re-check the list before each one. Budget: S at most three questions, M and L at most five. If the PM says "skip" or "enough", stop asking. Unanswered questions become guesses for the review in step 6, never blockers.
 
 ## 5. Dedup
 
