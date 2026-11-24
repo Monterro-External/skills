@@ -2,6 +2,11 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.15.2, 2026-11-24
+
+- **The readiness gate no longer fails on sources** (product ticket standard v1.17). Check 2 never fails: a claim without a source, or a named source without a link, is one line for engineering in the verdict and never comes up in the fix walk. Engineering can still send a ticket back with `insufficient-evidence`. Nothing to re-run.
+- **advance-ticket's evidence stage never blocks.** Unlinked or missing sources become a footnote offering to find them, and evidence gathering is the next action only when the PM asks. The S template in the beefcake-product repo says the same.
+
 ## 0.15.1, 2026-11-24
 
 - **The readiness gate no longer asks for a second source.** Check 11 does not grade principles about how much evidence a decision needs, such as "two independent sources or it stays a hypothesis". Check 2 still asks that every claim is linked; a ticket resting on one linked source passes. The synthesis skills keep using the principle. Nothing to re-run.

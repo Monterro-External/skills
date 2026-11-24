@@ -33,7 +33,7 @@ Footnotes run in both directions. A finding about a **later** stage belongs ther
 The ladder in brief (the reference file carries the full exit conditions):
 
 1. **Structure**: is it a conforming Product Ticket embryo?
-2. **Evidence**: does every claim carry a live link? "Link needed" and named-but-unlinked sources fail this.
+2. **Evidence**: are the sources that exist linked? This stage never blocks (product ticket standard v1.17): an unlinked or missing source is a footnote offering to find it, and the ladder moves on. Evidence gathering is the next action only when the PM asks for it.
 3. **Open questions**: are they down to three or fewer, and is each one still genuinely deferrable?
 4. **Validation**: do the success-criteria hypotheses have a validation result, or at least a planned test? Include the build-versus-configure check here when the parked solution resembles something an existing tool or platform already does: thirty minutes of checking existing mechanisms against the acceptance scenarios beats any amount of ideation.
 5. **Gate**: is there a gate decision (door, verdict, date)? If everything above is clear and this is missing, the next action is the gate, and it is a human's.

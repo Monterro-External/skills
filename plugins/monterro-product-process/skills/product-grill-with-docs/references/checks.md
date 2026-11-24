@@ -1,6 +1,6 @@
 # Readiness checks
 
-The readiness checklist of the Monterro product ticket standard at **v1.16**, as pass/fail rules. This file is the standard the grill uses unless `standard` in the config names a company's own. Numbers are stable; skills and evals refer to them. Applies-to column: S means the check runs for S-tier tickets; all others run for M and L only.
+The readiness checklist of the Monterro product ticket standard at **v1.17**, as pass/fail rules. This file is the standard the grill uses unless `standard` in the config names a company's own. Numbers are stable; skills and evals refer to them. Applies-to column: S means the check runs for S-tier tickets; all others run for M and L only.
 
 Where a configured `standard` and this file disagree, the configured standard wins: say so in the verdict's line for engineering / CPO rather than grading against both.
 
@@ -9,7 +9,7 @@ Wherever a check below says "Note" or "noted", that is one line under **For engi
 | # | Check | Passes when | Applies |
 |---|---|---|---|
 | 1 | Intent | One sentence, describing one change. Two verbs joined by "and" is usually two changes | S M L |
-| 2 | Evidence | Every claim in Problem and evidence has a link or an attachment. The original signal is present verbatim, with source, author and date. "Link needed" or a named-but-unlinked source fails | S M L |
+| 2 | Evidence | Never fails (standard v1.17). Sources are the PM's judgement, not a handover condition. A claim with no source, or a source the ticket names without a link, is one line under **For engineering / CPO** so the engineer reading at handover knows what the claim rests on. It is never a failing check and never a question in the fix walk | S M L |
 | 3 | Outcome and success criteria | The outcome is stated as changed customer behaviour rather than as something shipped. At M that is one line of prose and there is nothing further to grade. At L each success criterion is also measurable with the bar as a number, says nothing about technology, and describes something a user could observe; a sample size is not a threshold, and no criterion may promise what a product decision elsewhere in the ticket makes impossible | M L |
 | 4 | Non-goals | Populated, and at least one names something a reasonable reader would otherwise assume is in scope | M L |
 | 5 | No implementation | Nothing from the prohibition list (modules, services, schemas, endpoints, frameworks, file names, implementation steps, estimates, resourcing) as a requirement; kept ideas are marked non-binding. An analytics event named as a decision is **not** implementation: section 5 of the standard lists "analytics events to emit" among the decisions product owes engineering, so naming one passes and naming none is the thing worth a Note | S M L |

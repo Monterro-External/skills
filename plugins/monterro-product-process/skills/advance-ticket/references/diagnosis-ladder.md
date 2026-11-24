@@ -10,9 +10,9 @@ Walk top to bottom; the diagnosis is the first stage whose exit condition fails.
 
 ## Stage 2: Evidence
 
-**Exit condition:** every claim in Problem and evidence resolves to a live link or an attached artifact. Named-but-unlinked sources ("retro notes, link needed") fail. An honest "None yet, to be gathered in discovery" also fails this stage, and that is the point: the stage's next action is to gather it.
+**Exit condition:** none. This stage never blocks (product ticket standard v1.17): sources are the PM's judgement, and the readiness gate notes a missing link for engineering instead of failing it. Check the evidence anyway and report what you find as a footnote: a source the ticket names without a link ("SUP-10391 is named, not linked; I can look for it"), a claim with nothing behind it, a candidate link you found in a connected source. Then move to the next stage.
 
-**Fails →** next action is evidence gathering: draft the request messages, search connected sources for candidate links, and if the claim cannot be evidenced at all, recommend demoting it to an assumption. Baseline questions (volumes, time spent) belong here too.
+**When the PM asks to strengthen the evidence →** next action is evidence gathering: draft the request messages, search connected sources for candidate links, and if a claim cannot be evidenced, suggest demoting it to an assumption. Baseline questions (volumes, time spent) belong here too.
 
 ## Stage 3: Open questions
 
