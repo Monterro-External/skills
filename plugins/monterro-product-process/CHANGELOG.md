@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.15.3, 2026-11-24
+
+- **The grill passes prototype-ticket's `Needs component` line.** Check 5 failed it as a binding build requirement, so a ticket that had just been through prototype-ticket bounced on that skill's own output. It is part of an illustrative reference and passes; `(not yet proposed)` becomes a note for engineering. Nothing to re-run.
+
 ## 0.15.2, 2026-11-24
 
 - **The readiness gate no longer fails on sources** (product ticket standard v1.17). Check 2 never fails: a claim without a source, or a named source without a link, is one line for engineering in the verdict and never comes up in the fix walk. Engineering can still send a ticket back with `insufficient-evidence`. Nothing to re-run.
