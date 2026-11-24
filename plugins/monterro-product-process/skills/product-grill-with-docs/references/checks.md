@@ -2,7 +2,9 @@
 
 The readiness checklist of the Monterro product ticket standard at **v1.16**, as pass/fail rules. This file is the standard the grill uses unless `standard` in the config names a company's own. Numbers are stable; skills and evals refer to them. Applies-to column: S means the check runs for S-tier tickets; all others run for M and L only.
 
-Where a configured `standard` and this file disagree, the configured standard wins: say so in the verdict's Notes rather than grading against both.
+Where a configured `standard` and this file disagree, the configured standard wins: say so in the verdict's line for engineering / CPO rather than grading against both.
+
+Wherever a check below says "Note" or "noted", that is one line under **For engineering / CPO** in the verdict, unless the PM must act on it before handover.
 
 | # | Check | Passes when | Applies |
 |---|---|---|---|

@@ -2,6 +2,12 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.15.0, 2026-11-24
+
+- **The readiness gate fixes the ticket with the PM, one check at a time.** After a one-line count, product-grill-with-docs walks each failing check in its own question: why it fails, the exact replacement text, and apply, an alternative fix, or skip. Approved fixes are written to the ticket section by section, and every check runs again on the edited ticket before the status moves. The gate still never comments on the ticket.
+- **The verdict is plain markdown at the product altitude.** No code block, no source files or tables in the reasons, passing checks named only by count. Notes split into **Before handover** (at most three, what the PM must act on) and one line each **For engineering / CPO**.
+- **idea-to-ticket asks one question per message** (0.14.2). Compound question-bank entries are topics: ask the first part, infer the rest as a guess for the review. Nothing to re-run.
+
 ## 0.14.1, 2026-11-17
 
 - **Report ceilings aligned at 1800 words.** feedback-synthesis, sales-synthesis and interview-synthesis go from 1200, account-synthesis from 1400 and synthesis from 1500, matching support-synthesis. The demotion rule over the ceiling is unchanged. Nothing to re-run.
