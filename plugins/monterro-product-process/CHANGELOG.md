@@ -2,6 +2,10 @@
 
 Newest first. A **Re-run setup** line means repos configured on an earlier version need `/monterro-product-process:setup` again.
 
+## 0.15.1, 2026-11-24
+
+- **The readiness gate no longer asks for a second source.** Check 11 does not grade principles about how much evidence a decision needs, such as "two independent sources or it stays a hypothesis". Check 2 still asks that every claim is linked; a ticket resting on one linked source passes. The synthesis skills keep using the principle. Nothing to re-run.
+
 ## 0.15.0, 2026-11-24
 
 - **The readiness gate fixes the ticket with the PM, one check at a time.** After a one-line count, product-grill-with-docs walks each failing check in its own question: why it fails, the exact replacement text, and apply, an alternative fix, or skip. Approved fixes are written to the ticket section by section, and every check runs again on the edited ticket before the status moves. The gate still never comments on the ticket.
